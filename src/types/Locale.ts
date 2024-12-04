@@ -1,12 +1,20 @@
-interface HeaderLinkLocale {
+interface LinkData {
   text: string;
   to: string;
-  sublinks?: Array<HeaderLinkLocale>;
+}
+
+interface LinkCalls {
+  text: string;
+  links: Array<LinkData>;
+}
+interface HeaderLinkLocale extends LinkData {
+  sublinks?: Array<LinkData>;
 }
 
 interface GridItem {
   title: string;
-  child: string | string[];
+  child: string | string[] | Array<LinkCalls>;
+  text?: string;
 }
 
 interface HomeLocale {
@@ -18,19 +26,20 @@ interface HistoryDialog {
   text: string;
 }
 
-interface Company {
+interface CompanyLocale {
   history: HistoryLocale;
-  sublinks: string[];
+  sublinks: Array<LinkData>;
 }
 
 interface HistoryLocale {
-  subLinks: string[];
   items: Array<GridItem>;
   dialogs: Array<HistoryDialog>;
+  termsTitle: string;
+  termsLink: string;
 }
 
 interface InfraLocale {
-  subLinks: string[];
+  sublinks: Array<LinkData>;
   facilitiesPage: GridItem;
   labsPage: GridItem;
   analysisPage: AnalysisLocale;
@@ -41,13 +50,13 @@ interface AnalysisLocale {
 }
 
 interface DevAndTechLocale {
-  title: string;
-  gridItems: GridItem;
+  sublinks: Array<LinkData>;
+  gridItems: Array<GridItem>;
   paragraph: string;
 }
 
 interface QualityAndEnvironmentLocale {
-  sublinks: string[];
+  sublinks: Array<LinkData>;
   sgi: SGILocale;
   certifications: CertificationsLocale;
   supplierArea: SupplierAreaLocale;
@@ -68,8 +77,8 @@ interface SGILocale {
 
 interface CertificationsLocale {
   item: GridItem;
-  certifications: string;
   btnText: string;
+  hoverTexts: string[];
 }
 
 interface SupplierAreaLocale {
@@ -80,12 +89,13 @@ interface SupplierAreaLocale {
 }
 
 interface FISPQSLocale {
-  ITEM: GridItem;
-  subLinks: string[];
+  item: GridItem;
+  sublinks1: string[];
+  sublinks2: string[];
 }
 
 interface LogisticsLocale {
-  sublinks: string[];
+  sublinks: Array<LinkData>;
   item: GridItem;
   storage: GridItem;
   compoundOutput: Array<GridItem>;
@@ -96,15 +106,15 @@ interface LogisticsLocale {
 }
 
 interface ProductsLocale {
-  sublink: string;
-  link1Text: string;
-  link2Text: string;
+  sublink: LinkData;
+  link1: LinkData;
+  link2: LinkData;
   item1: GridItem;
   item2: GridItem;
 }
 
 interface ContactLocale {
-  sublinks: string;
+  sublinks: Array<LinkData>;
   talkWithUs: TalkWithUsLocale;
   workWithUs: WorkWithUsLocale;
 }
@@ -114,12 +124,15 @@ interface TalkWithUsLocale {
   formSubmit: string;
   formTerms: string;
   formInputs: string[];
+  formLink: LinkData;
+  selectText: string[];
 }
 
 interface WorkWithUsLocale {
   title: string;
   paragraphs: string[];
   callToAction: string;
+  formFields: string[];
 }
 
 interface FooterLocale {
@@ -132,7 +145,7 @@ export interface GlobalLocale {
   home: HomeLocale;
   knowMore: string;
   footer: FooterLocale;
-  company: Company;
+  company: CompanyLocale;
   infrastructure: InfraLocale;
   devAndTech: DevAndTechLocale;
   qualityAndEnvironment: QualityAndEnvironmentLocale;
