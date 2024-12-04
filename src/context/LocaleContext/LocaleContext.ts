@@ -2,7 +2,7 @@ import { createContext } from "react";
 import PTBRLocale from "../../../locale/PTBR";
 import { GlobalLocale } from "../../types/Locale";
 
-interface LocaleContextState {
+export interface LocaleContextState {
   locale: GlobalLocale;
   setLocale: React.Dispatch<React.SetStateAction<GlobalLocale>>;
 }
