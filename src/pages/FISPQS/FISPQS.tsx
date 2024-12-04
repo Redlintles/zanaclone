@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function FISPOS() {
+export default function FISPQS() {
   return <div></div>;
 }
