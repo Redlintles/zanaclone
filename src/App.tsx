@@ -22,54 +22,57 @@ import Contact from "./pages/Contact/Contact";
 import Localization from "./pages/Localization/Localization";
 import WorkWithUs from "./pages/WorkWithUs/WorkWithUs";
 import Links from "./pages/Links/Links";
+import LocaleContextProvider from "./context/LocaleContext/LocaleContextProvider";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dt" element={<DevAndTech />} />
-          <Route path="/links" element={<Links />} />
-          <Route path="/institucional" element={<History />}>
-            <Route path="/historia" element={<History />} />
-            <Route path="/cultura" element={<Culture />} />
-          </Route>
-          <Route path="/infraestrutura" element={<Facilities />}>
-            <Route path="/instalacoes" element={<Facilities />} />
-            <Route path="/laboratorios" element={<Labs />} />
-            <Route path="/analises" element={<Analysis />} />
-          </Route>
-          <Route path="/qualidade" element={<SGI />}>
-            <Route path="/politica-do-sgi" element={<SGI />} />
-            <Route path="/certificados" element={<Certifications />} />
-            <Route path="/area-fornecedor" element={<SupplierArea />} />
-            <Route path="/fispqs" element={<FISPQS />} />
-          </Route>
-          <Route path="/logistica" element={<Suppliers />}>
-            <Route path="/fornecedores" element={<Suppliers />} />
-            <Route path="/armazenamento" element={<Storage />} />
-            <Route path="/saida-dos-compostos" element={<CompoundFormat />} />
-            <Route
-              path="/formato-dos-compostos"
-              element={<CompoundsOutput />}
-            />
-          </Route>
-          <Route path="/produtos" element={<RubberCompounds />}>
-            <Route
-              path="/compostos-de-borracha"
-              element={<RubberCompounds />}
-            />
-          </Route>
-          <Route path="/contato" element={<Contact />}>
-            <Route path="/fale-conosco" element={<Contact />} />
-            <Route path="/localizacao" element={<Localization />} />
-            <Route path="/trabalhe-conosco" element={<WorkWithUs />} />
-          </Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <LocaleContextProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dt" element={<DevAndTech />} />
+            <Route path="/links" element={<Links />} />
+            <Route path="/institucional" element={<History />}>
+              <Route path="/historia" element={<History />} />
+              <Route path="/cultura" element={<Culture />} />
+            </Route>
+            <Route path="/infraestrutura" element={<Facilities />}>
+              <Route path="/instalacoes" element={<Facilities />} />
+              <Route path="/laboratorios" element={<Labs />} />
+              <Route path="/analises" element={<Analysis />} />
+            </Route>
+            <Route path="/qualidade" element={<SGI />}>
+              <Route path="/politica-do-sgi" element={<SGI />} />
+              <Route path="/certificados" element={<Certifications />} />
+              <Route path="/area-fornecedor" element={<SupplierArea />} />
+              <Route path="/fispqs" element={<FISPQS />} />
+            </Route>
+            <Route path="/logistica" element={<Suppliers />}>
+              <Route path="/fornecedores" element={<Suppliers />} />
+              <Route path="/armazenamento" element={<Storage />} />
+              <Route path="/saida-dos-compostos" element={<CompoundFormat />} />
+              <Route
+                path="/formato-dos-compostos"
+                element={<CompoundsOutput />}
+              />
+            </Route>
+            <Route path="/produtos" element={<RubberCompounds />}>
+              <Route
+                path="/compostos-de-borracha"
+                element={<RubberCompounds />}
+              />
+            </Route>
+            <Route path="/contato" element={<Contact />}>
+              <Route path="/fale-conosco" element={<Contact />} />
+              <Route path="/localizacao" element={<Localization />} />
+              <Route path="/trabalhe-conosco" element={<WorkWithUs />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </LocaleContextProvider>
     </>
   );
 }
