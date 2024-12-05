@@ -35,39 +35,54 @@ function App() {
             <Route path="/dt" element={<DevAndTech />} />
             <Route path="/links" element={<Links />} />
             <Route path="/institucional" element={<History />}>
-              <Route path="/historia" element={<History />} />
-              <Route path="/cultura" element={<Culture />} />
+              <Route path="/institucional/historia" element={<History />} />
+              <Route path="/institucional/cultura" element={<Culture />} />
             </Route>
             <Route path="/infraestrutura" element={<Facilities />}>
-              <Route path="/instalacoes" element={<Facilities />} />
-              <Route path="/laboratorios" element={<Labs />} />
-              <Route path="/analises" element={<Analysis />} />
+              <Route
+                path="/infraestrutura/instalacoes"
+                element={<Facilities />}
+              />
+              <Route path="/infraestrutura/laboratorios" element={<Labs />} />
+              <Route path="/infraestrutura/analises" element={<Analysis />} />
             </Route>
             <Route path="/qualidade" element={<SGI />}>
-              <Route path="/politica-do-sgi" element={<SGI />} />
-              <Route path="/certificados" element={<Certifications />} />
-              <Route path="/area-fornecedor" element={<SupplierArea />} />
-              <Route path="/fispqs" element={<FISPQS />} />
+              <Route path="/qualidade/politica-do-sgi" element={<SGI />} />
+              <Route
+                path="/qualidade/certificados"
+                element={<Certifications />}
+              />
+              <Route
+                path="/qualidade/area-fornecedor"
+                element={<SupplierArea />}
+              />
+              <Route path="/qualidade/fispqs" element={<FISPQS />} />
             </Route>
             <Route path="/logistica" element={<Suppliers />}>
-              <Route path="/fornecedores" element={<Suppliers />} />
-              <Route path="/armazenamento" element={<Storage />} />
-              <Route path="/saida-dos-compostos" element={<CompoundFormat />} />
+              <Route path="/logistica/fornecedores" element={<Suppliers />} />
+              <Route path="/logistica/armazenamento" element={<Storage />} />
               <Route
-                path="/formato-dos-compostos"
+                path="/logistica/saida-dos-compostos"
+                element={<CompoundFormat />}
+              />
+              <Route
+                path="/logistica/formato-dos-compostos"
                 element={<CompoundsOutput />}
               />
             </Route>
             <Route path="/produtos" element={<RubberCompounds />}>
               <Route
-                path="/compostos-de-borracha"
+                path="/produtos/compostos-de-borracha"
                 element={<RubberCompounds />}
               />
             </Route>
             <Route path="/contato" element={<Contact />}>
-              <Route path="/fale-conosco" element={<Contact />} />
-              <Route path="/localizacao" element={<Localization />} />
-              <Route path="/trabalhe-conosco" element={<WorkWithUs />} />
+              <Route path="/contato/fale-conosco" element={<Contact />} />
+              <Route path="/contato/localizacao" element={<Localization />} />
+              <Route
+                path="/contato/trabalhe-conosco"
+                element={<WorkWithUs />}
+              />
             </Route>
           </Routes>
           <Footer />
