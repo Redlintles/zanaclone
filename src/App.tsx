@@ -41,7 +41,7 @@ function App() {
     if (titleObj) {
       document.title = titleObj.title;
     }
-  }, [pathname]);
+  }, [pathname, locale]);
   return (
     <>
       <Header />
