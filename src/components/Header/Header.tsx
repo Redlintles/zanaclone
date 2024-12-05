@@ -42,8 +42,8 @@ export default function Header() {
         <SubHeader>
           {locale.headerLinks &&
             locale.headerLinks.map((item, index) => (
-              <div className="header-link">
-                <Link to={item.to} className="header-link__link" key={index}>
+              <div className="header-link" key={index}>
+                <Link to={item.to} className="header-link__link">
                   {item.text}
                   {item.sublinks && <FaCaretDown />}
                 </Link>
