@@ -8,13 +8,7 @@ import { Link } from "react-router-dom";
 export default function History() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <main className="history main">
-      <nav className="history-nav main__subnav">
-        {locale.company.sublinks &&
-          locale.company.sublinks.map((item) => (
-            <Link to={item.to}>{item.text}</Link>
-          ))}
-      </nav>
+    <>
       <section className="history-main">
         <article className="history__item">
           <div className="history-item__left">
@@ -36,6 +30,7 @@ export default function History() {
         {locale.company.history.dialogs &&
           locale.company.history.dialogs.map((item, index) => (
             <div
+              key={index}
               className={index % 2 == 0 ? "timeline__left" : "timeline__right"}
             >
               <h6>{item.year}</h6>
@@ -47,6 +42,6 @@ export default function History() {
         <h3>{locale.company.history.termsTitle}</h3>
         <Link to="#">{locale.company.history.termsLink}</Link>
       </section>
-    </main>
+    </>
   );
 }
