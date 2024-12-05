@@ -6,11 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import LocaleContextProvider from "./context/LocaleContext/LocaleContextProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+  <>
     <LocaleContextProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </LocaleContextProvider>
-  </StrictMode>
+  </>
 );
