@@ -1,6 +1,47 @@
 import { GlobalLocale } from "../src/types/Locale";
 const PTBRLocale: GlobalLocale = {
   type: "PT-BR",
+  titles: {
+    refs: [
+      {
+        title: "Institucional | Zanaflex - Compostos de Borracha",
+        path: "/institucional",
+      },
+      {
+        title: "Infraestrutura | Zanaflex - Compostos de Borracha",
+        path: "/infraestrutura",
+      },
+      {
+        title: "D&T | Zanaflex - Compostos de Borracha",
+        path: "/dt",
+      },
+      {
+        title: "Qualidade & Meio Ambiente | Zanaflex - Compostos de Borracha",
+        path: "/qualidade",
+      },
+      {
+        title: "Logística | Zanaflex - Compostos de Borracha",
+        path: "/logistica",
+      },
+      {
+        title: "Produtos | Zanaflex - Compostos de Borracha",
+        path: "/produtos",
+      },
+      {
+        title: "Contato | Zanaflex - Compostos de Borracha",
+        path: "/contato",
+      },
+      {
+        title: "Links | Zanaflex - Compostos de Borracha",
+        path: "/links",
+      },
+      {
+        path: "/",
+        title:
+          "ZANAFLEX - Soluções Tecnológicas em Produtos Elastômeros e Compostos de Borracha",
+      },
+    ],
+  },
   headerLinks: [
     {
       text: "Home",
