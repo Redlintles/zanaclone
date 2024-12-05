@@ -3,6 +3,10 @@ interface LinkData {
   to: string;
 }
 
+interface DynamicTitleMapping {
+  refs: Array<{ title: string; path: string }>;
+}
+
 interface LinkCalls {
   text: string;
   links: Array<LinkData>;
@@ -153,4 +157,5 @@ export interface GlobalLocale {
   products: ProductsLocale;
   contactLocale: ContactLocale;
   links: GridItem;
+  titles: DynamicTitleMapping;
 }
