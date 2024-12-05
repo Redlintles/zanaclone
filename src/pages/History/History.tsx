@@ -10,17 +10,17 @@ export default function History() {
   return (
     <>
       <section className="history-main">
-        <article className="history__item">
-          <div className="history-item__left">
+        <article className="item item--half">
+          <div className="item-half__left">
             <h2>{locale.company.history.items[0].title}</h2>
             <p>{locale.company.history.items[0].child as string}</p>
           </div>
-          <div className="history-item__right">
+          <div className="item-half__right">
             <img src={logoSolo} alt="" />
           </div>
         </article>
 
-        <article className="history__item history__item--full-width">
+        <article className="item item--full">
           <h2>{locale.company.history.items[1].title}</h2>
           <p>{locale.company.history.items[1].child as string}</p>
         </article>
