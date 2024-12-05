@@ -26,6 +26,12 @@ import { useContext, useEffect } from "react";
 import localeContext, {
   LocaleContextState,
 } from "./context/LocaleContext/LocaleContext";
+import InstitucionalLayout from "./layouts/InstitucionalLayout";
+import InfraLayout from "./layouts/InfraLayout";
+import QualityLayout from "./layouts/QualityLayout";
+import LogisticLayout from "./layouts/LogisticLayout";
+import ProductsLayout from "./layouts/ProductsLayout";
+import ContactLayout from "./layouts/ContactLayout";
 
 function App() {
   const { pathname } = useLocation();
@@ -49,43 +55,40 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dt" element={<DevAndTech />} />
         <Route path="/links" element={<Links />} />
-        <Route path="/institucional" element={<History />}>
-          <Route path="/institucional/historia" element={<History />} />
-          <Route path="/institucional/cultura" element={<Culture />} />
+        <Route path="/institucional" element={<InstitucionalLayout />}>
+          <Route index element={<History />} />
+          <Route path="historia" element={<History />} />
+          <Route path="cultura" element={<Culture />} />
         </Route>
-        <Route path="/infraestrutura" element={<Facilities />}>
-          <Route path="/infraestrutura/instalacoes" element={<Facilities />} />
-          <Route path="/infraestrutura/laboratorios" element={<Labs />} />
-          <Route path="/infraestrutura/analises" element={<Analysis />} />
+        <Route path="/infraestrutura" element={<InfraLayout />}>
+          <Route index element={<Facilities />} />
+          <Route path="instalacoes" element={<Facilities />} />
+          <Route path="laboratorios" element={<Labs />} />
+          <Route path="analises" element={<Analysis />} />
         </Route>
-        <Route path="/qualidade" element={<SGI />}>
-          <Route path="/qualidade/politica-do-sgi" element={<SGI />} />
-          <Route path="/qualidade/certificados" element={<Certifications />} />
-          <Route path="/qualidade/area-fornecedor" element={<SupplierArea />} />
-          <Route path="/qualidade/fispqs" element={<FISPQS />} />
+        <Route path="/qualidade" element={<QualityLayout />}>
+          <Route index element={<SGI />} />
+          <Route path="politica-do-sgi" element={<SGI />} />
+          <Route path="certificados" element={<Certifications />} />
+          <Route path="area-fornecedor" element={<SupplierArea />} />
+          <Route path="fispqs" element={<FISPQS />} />
         </Route>
-        <Route path="/logistica" element={<Suppliers />}>
-          <Route path="/logistica/fornecedores" element={<Suppliers />} />
-          <Route path="/logistica/armazenamento" element={<Storage />} />
-          <Route
-            path="/logistica/saida-dos-compostos"
-            element={<CompoundFormat />}
-          />
-          <Route
-            path="/logistica/formato-dos-compostos"
-            element={<CompoundsOutput />}
-          />
+        <Route path="/logistica" element={<LogisticLayout />}>
+          <Route index element={<Suppliers />} />
+          <Route path="fornecedores" element={<Suppliers />} />
+          <Route path="armazenamento" element={<Storage />} />
+          <Route path="saida-dos-compostos" element={<CompoundFormat />} />
+          <Route path="formato-dos-compostos" element={<CompoundsOutput />} />
         </Route>
-        <Route path="/produtos" element={<RubberCompounds />}>
-          <Route
-            path="/produtos/compostos-de-borracha"
-            element={<RubberCompounds />}
-          />
+        <Route path="/produtos" element={<ProductsLayout />}>
+          <Route index element={<RubberCompounds />} />
+          <Route path="compostos-de-borracha" element={<RubberCompounds />} />
         </Route>
-        <Route path="/contato" element={<Contact />}>
-          <Route path="/contato/fale-conosco" element={<Contact />} />
-          <Route path="/contato/localizacao" element={<Localization />} />
-          <Route path="/contato/trabalhe-conosco" element={<WorkWithUs />} />
+        <Route path="/contato" element={<ContactLayout />}>
+          <Route index element={<Contact />} />
+          <Route path="fale-conosco" element={<Contact />} />
+          <Route path="localizacao" element={<Localization />} />
+          <Route path="trabalhe-conosco" element={<WorkWithUs />} />
         </Route>
       </Routes>
       <Footer />
