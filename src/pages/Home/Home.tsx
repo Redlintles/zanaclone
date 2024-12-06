@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import { LocaleContextState } from "@app-types/locale";
 
