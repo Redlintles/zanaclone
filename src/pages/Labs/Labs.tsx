@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import localeContext, {
-  LocaleContextState,
-} from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
+import { LocaleContextState } from "@app-types/locale";
 
-import labsImg from "../../assets/laboratorios.21fae6aa25d15b016974.png";
+import labsImg from "@assets/laboratorios.21fae6aa25d15b016974.png";
 
 export default function Labs() {
   const { locale } = useContext<LocaleContextState>(localeContext);

@@ -6,4 +6,10 @@ declare module "@components/*";
 declare module "@utils/*";
 declare module "@layouts/*";
 declare module "@context/*";
-declare module "@app-types/*";
+
+declare module "@app-types/global" {
+  export interface LinkData {
+    text: string;
+    to: string;
+  }
+}

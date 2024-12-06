@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import localeContext, {
-  LocaleContextState,
-} from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
+import { LocaleContextState } from "@app-types/locale";
 
-import bandeiraBrasil from "../../assets/bandeira-brasil.f3c6710447c938bd5e4e.png";
-import bandeiraEspanha from "../../assets/bandeira-espanha.3881af157e7e4d259a32.png";
-import bandeiraEua from "../../assets/bandeira-eua.e961ece6e927d8260a82.png";
-import logoZanaflex from "../../assets/logo-zanaflex.png";
+import bandeiraBrasil from "@assets/bandeira-brasil.f3c6710447c938bd5e4e.png";
+import bandeiraEspanha from "@assets/bandeira-espanha.3881af157e7e4d259a32.png";
+import bandeiraEua from "@assets/bandeira-eua.e961ece6e927d8260a82.png";
+import logoZanaflex from "@assets/logo-zanaflex.png";
 import { FaCaretDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 

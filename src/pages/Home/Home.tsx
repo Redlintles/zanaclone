@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import localeContext, {
-  LocaleContextState,
-} from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
+import { LocaleContextState } from "@app-types/locale";
+
 import { Link } from "react-router-dom";
-import distributionsImg from "../../assets/formatos-de-distribuicao.bc1b8916ccd13ba7a9e9.png";
+import distributionsImg from "@assets/formatos-de-distribuicao.bc1b8916ccd13ba7a9e9.png";
 export default function Home() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (

@@ -23,9 +23,8 @@ import Localization from "./pages/Localization/Localization";
 import WorkWithUs from "./pages/WorkWithUs/WorkWithUs";
 import Links from "./pages/Links/Links";
 import { useContext, useEffect } from "react";
-import localeContext, {
-  LocaleContextState,
-} from "./context/LocaleContext/LocaleContext";
+import localeContext from "./context/LocaleContext/LocaleContext";
+import { LocaleContextState } from "@app-types/locale";
 import InstitucionalLayout from "./layouts/InstitucionalLayout";
 import InfraLayout from "./layouts/InfraLayout";
 import QualityLayout from "./layouts/QualityLayout";

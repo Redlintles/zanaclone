@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import localeContext, {
-  LocaleContextState,
-} from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
+import { LocaleContextState } from "@app-types/locale";
 
-import logoSolo from "../../assets/logo-solo.b0401efe22357fcf2e2b.png";
+import logoSolo from "@assets/logo-solo.b0401efe22357fcf2e2b.png";
 import { Link } from "react-router-dom";
 export default function History() {
   const { locale } = useContext<LocaleContextState>(localeContext);

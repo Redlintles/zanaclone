@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactNode, useState } from "react";
-import PTBRLocale from "../../../locale/PTBR";
-import { GlobalLocale } from "../../types/Locale";
+import PTBRLocale from "@locale/PTBR";
+import GlobalLocale from "@app-types/locale";
 import localeContext from "./LocaleContext";
 
 const LocaleContextProvider = ({ children }: { children: ReactNode }) => {

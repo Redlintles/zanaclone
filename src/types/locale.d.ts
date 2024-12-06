@@ -143,19 +143,27 @@ interface FooterLocale {
   text: string;
 }
 
-export interface GlobalLocale {
-  type: string;
-  headerLinks: Array<HeaderLinkLocale>;
-  home: HomeLocale;
-  knowMore: string;
-  footer: FooterLocale;
-  company: CompanyLocale;
-  infrastructure: InfraLocale;
-  devAndTech: DevAndTechLocale;
-  qualityAndEnvironment: QualityAndEnvironmentLocale;
-  logistics: LogisticsLocale;
-  products: ProductsLocale;
-  contactLocale: ContactLocale;
-  links: GridItem;
-  titles: DynamicTitleMapping;
+declare module "@app-types/locale" {
+  export interface LocaleContextState {
+    locale: GlobalLocale;
+    setLocale: React.Dispatch<React.SetStateAction<GlobalLocale>>;
+  }
+  export default interface GlobalLocale {
+    type: string;
+    headerLinks: Array<HeaderLinkLocale>;
+    home: HomeLocale;
+    knowMore: string;
+    footer: FooterLocale;
+    company: CompanyLocale;
+    infrastructure: InfraLocale;
+    devAndTech: DevAndTechLocale;
+    qualityAndEnvironment: QualityAndEnvironmentLocale;
+    logistics: LogisticsLocale;
+    products: ProductsLocale;
+    contactLocale: ContactLocale;
+    links: GridItem;
+    titles: DynamicTitleMapping;
+  }
+
+  export {};
 }
