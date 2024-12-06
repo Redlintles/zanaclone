@@ -4,7 +4,7 @@ import localeContext from "@context/LocaleContext/LocaleContext";
 import SubNav from "@components/SubNav/SubNav";
 import itemImg1 from "@assets/vantagens.96787b694afc989430ca.png";
 import itemOutlineImg from "@assets/download.png";
-import ItemList from "../../components/ItemList/ItemList";
+import ItemList from "@components/ItemList/ItemList";
 export default function DevAndTech() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
@@ -28,6 +28,14 @@ export default function DevAndTech() {
           <img src={itemOutlineImg} alt="" />
           <p>{locale.devAndTech.paragraph}</p>
         </div>
+      </div>
+      <div className="terms">
+        <h4 className="terms__title">
+          {locale.qualityAndEnvironment.sgi.termsTitle}
+        </h4>
+        <a className="terms__link">
+          {locale.qualityAndEnvironment.sgi.termsLink}
+        </a>
       </div>
     </section>
   );
