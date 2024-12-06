@@ -76,8 +76,8 @@ function App() {
           <Route index element={<Suppliers />} />
           <Route path="fornecedores" element={<Suppliers />} />
           <Route path="armazenamento" element={<Storage />} />
-          <Route path="saida-dos-compostos" element={<CompoundFormat />} />
-          <Route path="formato-dos-compostos" element={<CompoundsOutput />} />
+          <Route path="saida-dos-compostos" element={<CompoundsOutput />} />
+          <Route path="formato-dos-compostos" element={<CompoundFormat />} />
         </Route>
         <Route path="/produtos" element={<ProductsLayout />}>
           <Route index element={<RubberCompounds />} />
