@@ -536,12 +536,12 @@ const PTBRLocale: GlobalLocale = {
           child:
             "Sistemas de corte em mantas separadas em lâminas de acordo com o tamanho especificado.",
         },
-      ],
-      formats2: [
         {
           title: "Tiras",
           child: "Cortadas em espessuras e comprimentos pré-determinados.",
         },
+      ],
+      formats2: [
         {
           title: "Tiras Perfuradas",
           child:

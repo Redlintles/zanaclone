@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function CompoundFormat() {
-  return <div></div>;
+  return (
+    <>
+      <div className="compounds-f-main"></div>
+    </>
+  );
 }
