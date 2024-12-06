@@ -1,5 +1,8 @@
 declare module "@locale/*";
-declare module "@assets/*";
+declare module "@assets/*" {
+  const value: string;
+  export default value;
+}
 declare module "@hooks/*";
 declare module "@pages/*";
 declare module "@components/*";
