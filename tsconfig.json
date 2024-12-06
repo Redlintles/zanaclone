@@ -16,6 +16,7 @@
       "@locale/*": ["src/locale/*"],
       "@utils/*": ["src/utils/*"],
       "@app-types/*": ["src/types/*"]
-    }
+    },
+    "typeRoots": ["src/types", "node_modules/@types"]
   }
 }
