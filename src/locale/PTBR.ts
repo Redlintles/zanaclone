@@ -525,7 +525,7 @@ const PTBRLocale: GlobalLocale = {
         title: "Formatos dos Compostos",
         child: "A logistíca de distribuição é pensada de forma...",
       },
-      formats: [
+      formats1: [
         {
           title: "WigWag",
           child:
@@ -536,6 +536,8 @@ const PTBRLocale: GlobalLocale = {
           child:
             "Sistemas de corte em mantas separadas em lâminas de acordo com o tamanho especificado.",
         },
+      ],
+      formats2: [
         {
           title: "Tiras",
           child: "Cortadas em espessuras e comprimentos pré-determinados.",

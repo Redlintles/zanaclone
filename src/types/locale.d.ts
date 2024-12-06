@@ -105,7 +105,8 @@ interface LogisticsLocale {
   compoundOutput: Array<GridItem>;
   compoundFormat: {
     item: GridItem;
-    formats: Array<GridItem>;
+    formats1: Array<GridItem>;
+    formats2: Array<GridItem>;
   };
 }
 
