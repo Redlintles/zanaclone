@@ -4,6 +4,7 @@ import { LocaleContextState } from "@app-types/locale";
 
 import { Link } from "react-router-dom";
 import distributionsImg from "@assets/formatos-de-distribuicao.bc1b8916ccd13ba7a9e9.png";
+import ItemList from "@components/ItemList/ItemList";
 export default function Home() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
@@ -41,13 +42,7 @@ export default function Home() {
           </article>
           <article className="home-main__article home-main__article--border slide--from-left">
             <h2>{locale.home.gridItems[3].title}</h2>
-            <ul>
-              {(locale.home.gridItems[3].child as string[]).map((item) => (
-                <li>
-                  <p>{item}</p>
-                </li>
-              ))}
-            </ul>
+            <ItemList items={locale.home.gridItems[3].child as string[]} />
             <p>{locale.home.gridItems[3].text}</p>
           </article>
         </div>

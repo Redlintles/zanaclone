@@ -9,6 +9,7 @@ import slideImg4 from "@assets/4.565777e30196c59f18bc.png";
 import { useContext } from "react";
 import { LocaleContextState } from "@app-types/locale";
 import localeContext from "@context/LocaleContext/LocaleContext";
+import ItemList from "../../components/ItemList/ItemList";
 export default function Analysis() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
@@ -19,29 +20,22 @@ export default function Analysis() {
         </div>
         <div className="item-half__right">
           <h2>{locale.infrastructure.analysisPage.gridItems[0].title}</h2>
-          <ul>
-            {(
+
+          <ItemList
+            items={
               locale.infrastructure.analysisPage.gridItems[0].child as string[]
-            ).map((item, index) => (
-              <li key={index} className="item-list__item">
-                <p className="item__text">{item}</p>
-              </li>
-            ))}
-          </ul>
+            }
+          />
         </div>
       </div>
       <div className="item item--half">
         <div className="item-half__left">
           <h2>{locale.infrastructure.analysisPage.gridItems[1].title}</h2>
-          <ul>
-            {(
+          <ItemList
+            items={
               locale.infrastructure.analysisPage.gridItems[1].child as string[]
-            ).map((item, index) => (
-              <li key={index} className="item-list__item">
-                <p className="item__text">{item}</p>
-              </li>
-            ))}
-          </ul>
+            }
+          />
         </div>
         <div className="item-half__right">
           <img src={analysis2Img} alt="" className="item__img" />
