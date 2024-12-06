@@ -1,4 +1,4 @@
-import { GlobalLocale } from "../src/types/Locale";
+import GlobalLocale from "@app-types/locale";
 const PTBRLocale: GlobalLocale = {
   type: "PT-BR",
   titles: {
