@@ -93,7 +93,7 @@ const PTBRLocale: GlobalLocale = {
         },
         {
           text: "Certificações",
-          to: "/certificacoes",
+          to: "/certificados",
         },
         {
           text: "Área do Fornecedor",
