@@ -6,7 +6,7 @@ const ItemHalfContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 5rem 0;
 
   & > * {
     grid-column: span 1;
