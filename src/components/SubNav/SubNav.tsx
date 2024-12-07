@@ -1,11 +1,29 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 interface SubNavProps {
   links: Array<{ text: string; to: string }>;
 }
 
-const StyledSubNav = styled.nav``;
+const StyledSubNav = styled.nav`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  .subnav__link {
+    color: var(--color-gray);
+    font-size: 2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--active {
+      color: var(--color-yellow);
+      text-decoration: underline;
+    }
+  }
+`;
 
 export default function SubNav({ links }: SubNavProps) {
   const { pathname } = useLocation();
@@ -19,13 +37,16 @@ export default function SubNav({ links }: SubNavProps) {
     <StyledSubNav>
       {links &&
         links.map((item, index) => (
-          <Link
+          <NavLink
             key={index}
-            className="main-subnav__link"
+            className={({ isActive }) =>
+              "subnav__link" +
+              (isActive === true ? " subnav__link--active" : "")
+            }
             to={superLink + item.to}
           >
             {item.text}
-          </Link>
+          </NavLink>
         ))}
     </StyledSubNav>
   );
