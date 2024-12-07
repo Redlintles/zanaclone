@@ -3,20 +3,31 @@ import localeContext from "@context/LocaleContext/LocaleContext";
 import { LocaleContextState } from "@app-types/locale";
 
 import labsImg from "@assets/laboratorios.21fae6aa25d15b016974.png";
+import ItemHalf from "@components/ItemHalf/ItemHalf";
+import ItemImg from "@components/ItemImg/ItemImg";
+import ItemElement from "@components/ItemElement/ItemElement";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
 
 export default function Labs() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
     <section className="labs-main">
-      <div className="item item--half">
-        <div className="item-half__left">
-          <h2>{locale.infrastructure.labsPage.title}</h2>
-          <p>{locale.infrastructure.labsPage.child as string}</p>
-        </div>
-        <div className="item-half__right">
-          <img src={labsImg} alt="" />
-        </div>
-      </div>
+      <ItemHalf
+        leftElement={
+          <ItemElement>
+            <ItemTitle>{locale.infrastructure.labsPage.title}</ItemTitle>
+            <ItemText>
+              {locale.infrastructure.labsPage.child as string}
+            </ItemText>
+          </ItemElement>
+        }
+        rightElement={
+          <ItemElement padding="0">
+            <ItemImg src={labsImg} />
+          </ItemElement>
+        }
+      />
     </section>
   );
 }
