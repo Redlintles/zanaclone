@@ -1,6 +1,6 @@
 :root {
   --color-yellow: #e4ba22;
-  --color-yellow-dark: #a58614;
+  --color-yellow-dark: #C7A836;
   --color-gray: #56565A;
   --color-dark-bg: #1D1B1B;
   --color-black: #242222;
@@ -26,7 +26,10 @@ a {
 }
 
 button {
+appearance: none;
+  border: none;
   outline: none;
+
 }
 
 input {
