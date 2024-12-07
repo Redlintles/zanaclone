@@ -9,20 +9,19 @@ import ItemTitle from "../../components/ItemTitle/ItemTitle";
 import ItemText from "../../components/ItemText/ItemText";
 import ItemLink from "../../components/ItemLink/ItemLink";
 import ItemElement from "../../components/ItemElement/ItemElement";
+import Main from "../../components/Main/Main";
 
 const StyledVideo = styled.video`
   height: 40vh;
   width: 100%;
 `;
 
-const StyledHomeMain = styled.section`
-  padding: 3rem 20rem;
-`;
+const StyledHomeMain = styled.section``;
 
 export default function Home() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <main className="home main">
+    <Main>
       <section className="home-video">
         <StyledVideo
           src="https://znfx.com.br/files/vinheta.mp4"
@@ -85,6 +84,6 @@ export default function Home() {
           }
         />
       </StyledHomeMain>
-    </main>
+    </Main>
   );
 }
