@@ -347,7 +347,7 @@ const PTBRLocale: GlobalLocale = {
     sublinks: [
       {
         text: "Desenvolvimento e tecnologia",
-        to: "/dt",
+        to: "/",
       },
     ],
     gridItems: [
