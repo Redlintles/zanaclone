@@ -10,6 +10,7 @@ const StyledItemElement = styled.article`
   width: 100%;
   height: 100%;
   align-items: center;
+  justify-content: center;
 
   &.item--outline {
     border: 1px solid var(--color-gray);
@@ -20,19 +21,21 @@ interface ItemElementProps {
   children: ReactNode;
   outline?: boolean;
   padding?: string;
+  gap?: string;
 }
 
 export default function ItemElement({
   children,
   outline,
   padding,
+  gap,
 }: ItemElementProps) {
   const [manager] = useClassManager("", [[outline, "item--outline"]]);
 
   return (
     <StyledItemElement
       className={manager.getResult()}
-      style={{ padding: padding ? padding : "" }}
+      style={{ padding: padding ? padding : "", gap: gap ? gap : "" }}
     >
       {children}
     </StyledItemElement>
