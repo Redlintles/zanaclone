@@ -5,38 +5,53 @@ import SubNav from "@components/SubNav/SubNav";
 import itemImg1 from "@assets/vantagens.96787b694afc989430ca.png";
 import itemOutlineImg from "@assets/download.png";
 import ItemList from "@components/ItemList/ItemList";
+import Main from "../../components/Main/Main";
+import ItemHalf from "../../components/ItemHalf/ItemHalf";
+import ItemElement from "../../components/ItemElement/ItemElement";
+import ItemImg from "../../components/ItemImg/ItemImg";
+import ItemTitle from "../../components/ItemTitle/ItemTitle";
+import ItemText from "../../components/ItemText/ItemText";
 export default function DevAndTech() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <section className="dt-main">
-      <SubNav links={locale.devAndTech.sublinks} />
-      <div className="item item--half">
-        <div className="item__left">
-          <h2>{locale.devAndTech.gridItems[0].title}</h2>
-          <p>{locale.devAndTech.gridItems[0].text}</p>
-        </div>
-        <div className="item__right">
-          <img src={itemImg1} alt="" />
-        </div>
-      </div>
-      <div className="item item--half">
-        <div className="item__left">
-          <h2>{locale.devAndTech.gridItems[1].title}</h2>
-          <ItemList items={locale.devAndTech.gridItems[1].child as string[]} />
-        </div>
-        <div className="item__right outline slide-in">
-          <img src={itemOutlineImg} alt="" />
-          <p>{locale.devAndTech.paragraph}</p>
-        </div>
-      </div>
-      <div className="terms">
-        <h4 className="terms__title">
-          {locale.qualityAndEnvironment.sgi.termsTitle}
-        </h4>
-        <a className="terms__link">
-          {locale.qualityAndEnvironment.sgi.termsLink}
-        </a>
-      </div>
-    </section>
+    <Main>
+      <section className="dt-main">
+        <SubNav links={locale.devAndTech.sublinks} />
+
+        <ItemHalf
+          leftElement={
+            <ItemElement>
+              <ItemTitle>{locale.devAndTech.gridItems[0].title}</ItemTitle>
+              <ItemText>
+                {locale.devAndTech.gridItems[0].child as string}
+              </ItemText>
+            </ItemElement>
+          }
+          rightElement={
+            <ItemElement>
+              <ItemImg src={itemImg1} />
+            </ItemElement>
+          }
+          borderBottom
+        />
+
+        <ItemHalf
+          leftElement={
+            <ItemElement>
+              <ItemTitle>{locale.devAndTech.gridItems[1].title}</ItemTitle>
+              <ItemList
+                items={locale.devAndTech.gridItems[1].child as string[]}
+              />
+            </ItemElement>
+          }
+          rightElement={
+            <ItemElement outline gap={"5rem"}>
+              <ItemImg src={itemOutlineImg} width="15%" height="15%" />
+              <ItemText>{locale.devAndTech.paragraph}</ItemText>
+            </ItemElement>
+          }
+        />
+      </section>
+    </Main>
   );
 }
