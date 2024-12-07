@@ -38,8 +38,6 @@ interface CompanyLocale {
 interface HistoryLocale {
   items: Array<GridItem>;
   dialogs: Array<HistoryDialog>;
-  termsTitle: string;
-  termsLink: string;
 }
 
 interface InfraLocale {
@@ -71,8 +69,6 @@ interface SGILocale {
   main: GridItem;
   title: string;
   subtitle: string;
-  termsTitle: string;
-  termsLink: string;
   proeficiency: {
     item: GridItem;
     fispqs: GridItem;
@@ -144,6 +140,11 @@ interface FooterLocale {
   text: string;
 }
 
+interface TermsLocale {
+  termsLink: LinkData;
+  termsTitle: string;
+}
+
 declare module "@app-types/locale" {
   export interface LocaleContextState {
     locale: GlobalLocale;
@@ -169,6 +170,7 @@ declare module "@app-types/locale" {
     contactLocale: ContactLocale;
     links: GridItem;
     titles: DynamicTitleMapping;
+    terms: TermsLocale;
   }
 
   export {};
