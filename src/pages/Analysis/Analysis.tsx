@@ -9,7 +9,7 @@ import slideImg4 from "@assets/4.565777e30196c59f18bc.png";
 import { useContext } from "react";
 import { LocaleContextState } from "@app-types/locale";
 import localeContext from "@context/LocaleContext/LocaleContext";
-import ItemList from "../../components/ItemList/ItemList";
+import ItemList from "@components/ItemList/ItemList";
 export default function Analysis() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (

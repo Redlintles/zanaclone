@@ -1,6 +1,6 @@
 import { LocaleContextState } from "@app-types/locale";
 import { useContext } from "react";
-import localeContext from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
 import { LinkCalls } from "@app-types/locale";
 
 export default function Links() {

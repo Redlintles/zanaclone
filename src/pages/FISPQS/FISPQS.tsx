@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LocaleContextState } from "@app-types/locale";
-import localeContext from "../../context/LocaleContext/LocaleContext";
-import ItemList from "../../components/ItemList/ItemList";
+import localeContext from "@context/LocaleContext/LocaleContext";
+import ItemList from "@components/ItemList/ItemList";
 
 export default function FISPQS() {
   const { locale } = useContext<LocaleContextState>(localeContext);

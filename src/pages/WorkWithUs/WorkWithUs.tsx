@@ -1,6 +1,6 @@
 import { LocaleContextState } from "@app-types/locale";
 import React, { useContext } from "react";
-import localeContext from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
 
 export default function WorkWithUs() {
   const { locale } = useContext<LocaleContextState>(localeContext);
