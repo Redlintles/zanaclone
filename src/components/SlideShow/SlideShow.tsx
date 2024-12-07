@@ -6,13 +6,22 @@ interface SlideShowProps {
   timeout?: number;
 }
 
-const SlideShowContainer = styled.div``;
+const SlideShowContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  & > .slide-show__controllers {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+`;
 
 const SlideShowContent = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 300px;
+  height: 500px;
 `;
 
 const fadeIn = keyframes`
@@ -55,24 +64,25 @@ const SlideImage = styled.img<{ isActive: boolean }>`
 
 const SlideController = styled.button<{ isActive: boolean }>`
   background-color: gray;
-  width: 20px;
-  height: 20px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
+  margin: 0 0.5rem;
   cursor: pointer;
   ${({ isActive }) =>
     isActive
       ? css`
-          background-color: black;
+          background-color: var(--color-dark-bg);
         `
       : css`
-          background-color: gray;
+          background-color: var(--color-gray);
         `};
 `;
 
 export default function SlideShow({ images, timeout = 3000 }: SlideShowProps) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const [intervalId, setIntervalId] = useState<number | null>(null);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   const startInterval = () => {
     if (intervalId) {
@@ -111,7 +121,7 @@ export default function SlideShow({ images, timeout = 3000 }: SlideShowProps) {
         ))}
       </SlideShowContent>
 
-      <div>
+      <div className="slide-show__controllers">
         {images.map((_, index) => (
           <SlideController
             isActive={index === currentIndex}
