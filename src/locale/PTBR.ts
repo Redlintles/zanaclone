@@ -272,8 +272,6 @@ const PTBRLocale: GlobalLocale = {
           text: "18º reconhecimento Top Rubber",
         },
       ],
-      termsLink: "Clique aqui e consulte nosso Termo e Condições Gerais",
-      termsTitle: "Termo e Condições Gerais",
     },
   },
   infrastructure: {
@@ -409,8 +407,6 @@ const PTBRLocale: GlobalLocale = {
       },
       title: "Sistema de Gestão Integrado",
       subtitle: "Qualidade, Meio Ambiente, Saúde e Segurança",
-      termsLink: "Clique aqui e consulte nosso Termo e Condições Gerais",
-      termsTitle: "Termo e Condições Gerais",
       proeficiency: {
         item: {
           title: "Termo e Condições Gerais",
@@ -790,6 +786,13 @@ const PTBRLocale: GlobalLocale = {
         ],
       },
     ],
+  },
+  terms: {
+    termsLink: {
+      to: "",
+      text: "Clique aqui e consulte nosso Termo e Condições Gerais",
+    },
+    termsTitle: "Termo e Condições Gerais",
   },
 };
 
