@@ -10,37 +10,57 @@ import { useContext } from "react";
 import { LocaleContextState } from "@app-types/locale";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import ItemList from "@components/ItemList/ItemList";
+import ItemHalf from "../../components/ItemHalf/ItemHalf";
+import ItemTitle from "../../components/ItemTitle/ItemTitle";
+import ItemElement from "../../components/ItemElement/ItemElement";
+import ItemImg from "../../components/ItemImg/ItemImg";
 export default function Analysis() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
     <section className="analysis-main">
-      <div className="item item--half">
-        <div className="item-half__left">
-          <SlideShow images={[slideImg1, slideImg2, slideImg3, slideImg4]} />
-        </div>
-        <div className="item-half__right">
-          <h2>{locale.infrastructure.analysisPage.gridItems[0].title}</h2>
+      <ItemHalf
+        leftElement={
+          <ItemElement>
+            <SlideShow images={[slideImg1, slideImg2, slideImg3, slideImg4]} />
+          </ItemElement>
+        }
+        rightElement={
+          <ItemElement>
+            <ItemTitle>
+              {locale.infrastructure.analysisPage.gridItems[0].title}
+            </ItemTitle>
 
-          <ItemList
-            items={
-              locale.infrastructure.analysisPage.gridItems[0].child as string[]
-            }
-          />
-        </div>
-      </div>
-      <div className="item item--half">
-        <div className="item-half__left">
-          <h2>{locale.infrastructure.analysisPage.gridItems[1].title}</h2>
-          <ItemList
-            items={
-              locale.infrastructure.analysisPage.gridItems[1].child as string[]
-            }
-          />
-        </div>
-        <div className="item-half__right">
-          <img src={analysis2Img} alt="" className="item__img" />
-        </div>
-      </div>
+            <ItemList
+              items={
+                locale.infrastructure.analysisPage.gridItems[0]
+                  .child as string[]
+              }
+            />
+          </ItemElement>
+        }
+        borderBottom
+      />
+
+      <ItemHalf
+        leftElement={
+          <ItemElement>
+            <ItemTitle>
+              {locale.infrastructure.analysisPage.gridItems[1].title}
+            </ItemTitle>
+            <ItemList
+              items={
+                locale.infrastructure.analysisPage.gridItems[1]
+                  .child as string[]
+              }
+            />
+          </ItemElement>
+        }
+        rightElement={
+          <ItemElement padding={"3rem 0 0"}>
+            <ItemImg src={analysis2Img} />
+          </ItemElement>
+        }
+      />
     </section>
   );
 }
