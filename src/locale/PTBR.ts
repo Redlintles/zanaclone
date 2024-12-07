@@ -45,7 +45,7 @@ const PTBRLocale: GlobalLocale = {
   headerLinks: [
     {
       text: "Home",
-      to: "/home",
+      to: "/",
     },
     {
       text: "Institucional",
