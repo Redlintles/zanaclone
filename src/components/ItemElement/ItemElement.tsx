@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import useClassManager from "../../hooks/useClassManager";
 
 const StyledItemElement = styled.article`
   display: flex;
@@ -21,13 +22,11 @@ interface ItemElementProps {
 }
 
 export default function ItemElement({ children, outline }: ItemElementProps) {
-  let fullClassName = "";
-
-  if (outline) {
-    fullClassName += "item--outline";
-  }
+  const [manager] = useClassManager("", [[outline, "item--outline"]]);
 
   return (
-    <StyledItemElement className={fullClassName}>{children}</StyledItemElement>
+    <StyledItemElement className={manager.getResult()}>
+      {children}
+    </StyledItemElement>
   );
 }
