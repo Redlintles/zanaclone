@@ -10,6 +10,7 @@ import ItemFull from "../../components/ItemFull/ItemFull";
 import ItemImg from "../../components/ItemImg/ItemImg";
 import styled from "styled-components";
 import TermsAndConditions from "../../components/TermsAndConditions/TermsAndConditions";
+import ItemElement from "../../components/ItemElement/ItemElement";
 
 const HistoryTimeline = styled.section`
   margin: 0 12rem;
@@ -67,7 +68,7 @@ const HistoryTimeline = styled.section`
         z-index: 3;
         border-radius: 50%;
         top: -60%;
-        right: -23.5%;
+        right: -33%;
       }
     }
     &--right {
@@ -94,7 +95,7 @@ const HistoryTimeline = styled.section`
         z-index: 3;
         border-radius: 50%;
         top: -60%;
-        left: -23.7%;
+        left: -25.5%;
       }
     }
   }
@@ -106,14 +107,18 @@ export default function History() {
       <section className="history-main">
         <ItemHalf
           leftElement={
-            <>
+            <ItemElement>
               <ItemTitle>{locale.company.history.items[0].title}</ItemTitle>
               <ItemText>
                 {locale.company.history.items[0].child as string}
               </ItemText>
-            </>
+            </ItemElement>
           }
-          rightElement={<ItemImg src={logoSolo} />}
+          rightElement={
+            <ItemElement>
+              <ItemImg src={logoSolo} />
+            </ItemElement>
+          }
         />
 
         <ItemFull>
