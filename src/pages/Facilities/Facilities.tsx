@@ -9,31 +9,40 @@ import slideImage3 from "@assets/3.db2dd3cb509ef30839b7.png";
 import slideImage4 from "@assets/4.3628580f155f4345d3e5.png";
 import slideImage5 from "@assets/5.81592fb64ac45a55ed47.png";
 import ItemList from "@components/ItemList/ItemList";
+import ItemHalf from "../../components/ItemHalf/ItemHalf";
+import ItemTitle from "../../components/ItemTitle/ItemTitle";
+import ItemElement from "../../components/ItemElement/ItemElement";
 
 export default function Facilities() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
     <>
       <section className="facilities-main">
-        <article className="item item--half">
-          <div className="item-half__left">
-            <h2>{locale.infrastructure.facilitiesPage.title}</h2>
-            <ItemList
-              items={locale.infrastructure.facilitiesPage.child as string[]}
-            />
-          </div>
-          <div className="item-half__right">
-            <SlideShow
-              images={[
-                slideImage1,
-                slideImage2,
-                slideImage3,
-                slideImage4,
-                slideImage5,
-              ]}
-            />
-          </div>
-        </article>
+        <ItemHalf
+          leftElement={
+            <>
+              <ItemTitle>
+                {locale.infrastructure.facilitiesPage.title}
+              </ItemTitle>
+              <ItemList
+                items={locale.infrastructure.facilitiesPage.child as string[]}
+              />
+            </>
+          }
+          rightElement={
+            <ItemElement>
+              <SlideShow
+                images={[
+                  slideImage1,
+                  slideImage2,
+                  slideImage3,
+                  slideImage4,
+                  slideImage5,
+                ]}
+              />
+            </ItemElement>
+          }
+        />
       </section>
     </>
   );
