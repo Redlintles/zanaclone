@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
+import useClassManager from "../../hooks/useClassManager";
 
 const ItemHalfContainer = styled.div`
   display: grid;
@@ -27,14 +28,12 @@ export default function ItemHalf({
   rightElement,
   borderBottom,
 }: ItemHalfProps) {
-  let fullClassName: string = "";
-
-  if (borderBottom) {
-    fullClassName += "item-half--border-bottom";
-  }
+  const [manager] = useClassManager("", [
+    [borderBottom, "item-half--border-bottom"],
+  ]);
 
   return (
-    <ItemHalfContainer className={fullClassName}>
+    <ItemHalfContainer className={manager.getResult()}>
       <div className="item-half__left">{leftElement}</div>
       <div className="item-half__right">{rightElement}</div>
     </ItemHalfContainer>
