@@ -149,6 +149,11 @@ declare module "@app-types/locale" {
     locale: GlobalLocale;
     setLocale: React.Dispatch<React.SetStateAction<GlobalLocale>>;
   }
+
+  export interface LinkCalls {
+    text: string;
+    links: Array<LinkData>;
+  }
   export default interface GlobalLocale {
     type: string;
     headerLinks: Array<HeaderLinkLocale>;
