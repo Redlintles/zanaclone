@@ -19,13 +19,21 @@ const StyledItemElement = styled.article`
 interface ItemElementProps {
   children: ReactNode;
   outline?: boolean;
+  padding?: string;
 }
 
-export default function ItemElement({ children, outline }: ItemElementProps) {
+export default function ItemElement({
+  children,
+  outline,
+  padding,
+}: ItemElementProps) {
   const [manager] = useClassManager("", [[outline, "item--outline"]]);
 
   return (
-    <StyledItemElement className={manager.getResult()}>
+    <StyledItemElement
+      className={manager.getResult()}
+      style={{ padding: padding ? padding : "" }}
+    >
       {children}
     </StyledItemElement>
   );
