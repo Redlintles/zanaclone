@@ -9,10 +9,6 @@
 
 }
 
-
-main {
-  background-color: var(--color-white);
-}
 * {
   box-sizing: border-box;
   font-family: "Maven Pro", sans-serif;
