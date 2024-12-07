@@ -7,7 +7,7 @@ interface MainProps {
 
 const StyledMain = styled.main`
   background-color: var(--color-white);
-  padding: 3rem 20rem;
+  padding: 3rem 18rem;
   display: flex;
   flex-direction: column;
 `;
