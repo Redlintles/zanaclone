@@ -1,7 +1,7 @@
 import GlobalLocale from "@app-types/locale";
 
 const ENUSLocale: GlobalLocale = {
-  type: "PT-BR",
+  type: "EN-US",
   footer: {
     text: "ZANAFLEX - Technological Solutions in Elastomer Products Copyright© 2022 - Zanaflex Borrachas Ltda - All rights reserved.",
   },
@@ -17,68 +17,68 @@ const ENUSLocale: GlobalLocale = {
     history: {
       items: [
         {
-          title: "Histórico",
+          title: "History",
           child:
-            "Fundada e 1968, a Zanaflex produz Compostos de Borracha Sintética e Natural (masterbatch e composto acelerado) para diversos fins industriais. Situada em Cotia – São Paulo, fornece compostos técnicos de borracha de alta qualidade com preços competitivos a diversas empresas da cadeia automotiva (TIER 1) e reposição. Com equipamentos adequados para atender os requisitos de seus clientes combinado ao conhecimento técnico e um sistema da qualidade abrangente, a Zanaflex fornece compostos técnicos de borracha de alta qualidade numa gama variada de elastômeros sintéticos e naturais, pretos ou coloridos.",
+            "Founded in 1968, Zanaflex produces Synthetic and Natural Rubber Compounds (masterbatch and accelerated compound) for various industrial purposes. Located in Cotia, São Paulo, it supplies high-quality technical rubber compounds at competitive prices to several companies in the automotive (TIER 1) and aftermarket chains. With equipment suitable for meeting the requirements of its customers, combined with technical knowledge and a comprehensive quality system, Zanaflex supplies high-quality technical rubber compounds in a wide range of synthetic and natural elastomers, black or colored.",
         },
         {
-          title: "Soluções Tecnológicas em Produtos Elastômeros",
+          title: "Technological Solutions in Elastomer Products",
           child:
-            "A Zanaflex é líder no mercado brasileiro de compostos de borracha, uma empresa com capacidade para desenvolver e produzir produtos personalizados para as mais diversas aplicações. Nossos clientes são nossos parceiros, por isso privilegiamos o cumprimento de prazos, e a dedicação à qualidade através do investimento em equipamentos cada vez mais sofisticados.",
+            "Zanaflex is a leader in the Brazilian rubber compounds market, a company with the capacity to develop and produce customized products for a wide range of applications. Our customers are our partners, which is why we prioritize meeting deadlines and dedicating ourselves to quality through investment in increasingly sophisticated equipment.",
         },
       ],
       dialogs: [
         {
           year: 1968,
-          text: "Início das atividades na cidade de São Paulo",
+          text: "Start of activities in the city of São Paulo",
         },
         {
           year: 1978,
-          text: "Mudança para a cidade de Cotia com excelentes condições logísticas",
+          text: "Moving to the city of Cotia with excellent logistical conditions",
         },
         {
           year: 1992,
-          text: "Início da produção de compostos de borracha personalizados",
+          text: "Start of production of custom rubber compounds",
         },
         {
           year: 1999,
-          text: "Conquistamos a Certificação ISO 9002:1994",
+          text: "We have achieved ISO 9002:1994 Certification",
         },
         {
           year: 2002,
-          text: "O primeiro misturador Intermix fabricado no Brasil",
+          text: "The first Intermix mixer manufactured in Brazil",
         },
         {
           year: 2005,
-          text: "Expansão da fábrica, novo armazém e novas instalações para negro de fumo e pesagem automática",
+          text: "Factory expansion, new warehouse and new facilities for carbon black and automatic weighing",
         },
         {
           year: 2007,
-          text: "Inauguração da 5° linha de mistura de borracha",
+          text: "Inauguration of the 5th rubber mixing line",
         },
         {
           year: 2009,
-          text: "Aumento de 50% da capacidade de mistura de borracha",
+          text: "50% increase in rubber mixing capacity",
         },
         {
           year: 2012,
-          text: "Migração para ERP - SAP ECC 6.0 – Melhores práticas",
+          text: "Migration to ERP - SAP ECC 6.0 – Best Practices",
         },
         {
           year: 2017,
-          text: "Atualização para a certificação ISO 9001:2015",
+          text: "Update to ISO 9001:2015 certification",
         },
         {
           year: 2021,
-          text: "Inauguração da 7° linha de processamento",
+          text: "Inauguration of the 7th processing line",
         },
         {
           year: 2022,
-          text: "Conquistamos a Certificação IATF16949:2016 e Selo de Energia Renovável",
+          text: "We achieved IATF16949:2016 Certification and Renewable Energy Seal",
         },
         {
           year: 2023,
-          text: "18º reconhecimento Top Rubber",
+          text: "18th Top Rubber recognition",
         },
       ],
     },
@@ -95,9 +95,9 @@ const ENUSLocale: GlobalLocale = {
   },
   logistics: {
     storage: {
-      title: "Armazenamento",
+      title: "Storage",
       child:
-        "O armazenamento das matérias-primas é feito em ambientes com temperatura rigorosamente controlada, bem como o controle dos prazos de validade. Respeitando as peculiaridades de cada insumo, desenvolvemos embalagens específicas para o melhor armazenamento, como Paletes de Madeira, Caixas e Barris de Papelão Reforçado, Caixas Plásticas Retornáveis e Caixas de Metal, tudo para garantir altíssima qualidade e performance na produção dos compostos de borracha.",
+        "Raw materials are stored in environments with strictly controlled temperatures, as well as controlled expiration dates. Respecting the peculiarities of each input, we develop specific packaging for the best storage, such as Wooden Pallets, Reinforced Cardboard Boxes and Barrels, Returnable Plastic Boxes and Metal Boxes, all to ensure the highest quality and performance in the production of rubber compounds.",
     },
     item: {
       title: "International Suppliers",
@@ -465,8 +465,8 @@ const ENUSLocale: GlobalLocale = {
       title: "Main Applications",
       child: [
         "Aerospace",
-        "Agricola",
-        "Automotivo",
+        "Agricultural",
+        "Automotive",
         "Footwear",
         "Civil Construction",
         "Pharmacist",
