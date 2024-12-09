@@ -22,6 +22,8 @@ interface ItemElementProps {
   outline?: boolean;
   padding?: string;
   gap?: string;
+  margin?: string;
+  width?: string;
 }
 
 export default function ItemElement({
@@ -29,13 +31,20 @@ export default function ItemElement({
   outline,
   padding,
   gap,
+  margin,
+  width,
 }: ItemElementProps) {
   const [manager] = useClassManager("", [[outline, "item--outline"]]);
 
   return (
     <StyledItemElement
       className={manager.getResult()}
-      style={{ padding: padding ? padding : "", gap: gap ? gap : "" }}
+      style={{
+        padding: padding ? padding : "",
+        gap: gap ? gap : "",
+        margin,
+        width,
+      }}
     >
       {children}
     </StyledItemElement>
