@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import useClassManager from "../../hooks/useClassManager";
 
 interface ItemLinkProps {
   to: string;
   children: ReactNode;
+  wFit?: boolean;
 }
 
 const StyledItemLink = styled.div`
@@ -40,11 +42,15 @@ const StyledItemLink = styled.div`
       color: white;
     }
   }
+  &.item__link--fit-content {
+    width: fit-content;
+  }
 `;
 
-export default function ItemLink({ to, children }: ItemLinkProps) {
+export default function ItemLink({ to, children, wFit }: ItemLinkProps) {
+  const [manager] = useClassManager("", [[wFit, "item__link-fit-content"]]);
   return (
-    <StyledItemLink>
+    <StyledItemLink className={manager.getResult()}>
       <Link to={to}>{children}</Link>
     </StyledItemLink>
   );
