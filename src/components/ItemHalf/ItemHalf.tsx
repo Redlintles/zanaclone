@@ -22,18 +22,25 @@ interface ItemHalfProps {
   leftElement: ReactNode;
   rightElement: ReactNode;
   borderBottom?: boolean;
+  padding?: string;
+  margin?: string;
 }
 export default function ItemHalf({
   leftElement,
   rightElement,
   borderBottom,
+  padding,
+  margin,
 }: ItemHalfProps) {
   const [manager] = useClassManager("", [
     [borderBottom, "item-half--border-bottom"],
   ]);
 
   return (
-    <ItemHalfContainer className={manager.getResult()}>
+    <ItemHalfContainer
+      className={manager.getResult()}
+      style={{ margin, padding }}
+    >
       <div className="item-half__left">{leftElement}</div>
       <div className="item-half__right">{rightElement}</div>
     </ItemHalfContainer>

@@ -40,11 +40,13 @@ export default function Home() {
             leftElement={
               <>
                 <ItemElement>
-                  <ItemTitle>{locale.home.gridItems[0].title}</ItemTitle>
+                  <ItemTitle borderBottom>
+                    {locale.home.gridItems[0].title}
+                  </ItemTitle>
                   <ItemText>
                     {locale.home.gridItems[0].child as string}
                   </ItemText>
-                  <ItemLink to="/produtos/compostos-de-borracha">
+                  <ItemLink wFit to="/produtos/compostos-de-borracha">
                     {locale.knowMore}
                   </ItemLink>
                 </ItemElement>
@@ -53,12 +55,14 @@ export default function Home() {
             rightElement={
               <>
                 <ItemElement>
-                  <ItemTitle>{locale.home.gridItems[1].title}</ItemTitle>
+                  <ItemTitle borderBottom>
+                    {locale.home.gridItems[1].title}
+                  </ItemTitle>
                   <ItemText>
                     {locale.home.gridItems[1].child as string}
                   </ItemText>
                   <img src={distributionsImg} alt="" />
-                  <ItemLink to="/produtos/formatos-dos-compostos">
+                  <ItemLink wFit to="/produtos/formatos-dos-compostos">
                     {locale.knowMore}
                   </ItemLink>
                 </ItemElement>
@@ -70,12 +74,14 @@ export default function Home() {
             leftElement={
               <>
                 <ItemElement>
-                  <ItemTitle>{locale.home.gridItems[2].title}</ItemTitle>
+                  <ItemTitle borderBottom>
+                    {locale.home.gridItems[2].title}
+                  </ItemTitle>
                   <ItemText>
                     {locale.home.gridItems[2].child as string}
                   </ItemText>
 
-                  <ItemLink to="/infrasestrutura/instalacoes">
+                  <ItemLink wFit to="/infrasestrutura/instalacoes">
                     {locale.knowMore}
                   </ItemLink>
                 </ItemElement>
@@ -84,7 +90,9 @@ export default function Home() {
             rightElement={
               <>
                 <ItemElement outline>
-                  <ItemTitle>{locale.home.gridItems[3].title}</ItemTitle>
+                  <ItemTitle borderBottom>
+                    {locale.home.gridItems[3].title}
+                  </ItemTitle>
                   <ItemList
                     items={locale.home.gridItems[3].child as string[]}
                   />
