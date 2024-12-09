@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import localeContext from "@context/LocaleContext/LocaleContext";
-import { LocaleContextState } from "@app-types/locale";
+import GlobalLocale, { LocaleContextState } from "@app-types/locale";
 
 import bandeiraBrasil from "@assets/bandeira-brasil.f3c6710447c938bd5e4e.png";
 import bandeiraEspanha from "@assets/bandeira-espanha.3881af157e7e4d259a32.png";
@@ -9,6 +9,9 @@ import bandeiraEua from "@assets/bandeira-eua.e961ece6e927d8260a82.png";
 import logoZanaflex from "@assets/logo-zanaflex.png";
 import { FaCaretDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import PTBRLocale from "../../locale/PTBR";
+import ENUSLocale from "../../locale/ENUS";
+import ESESLocale from "../../locale/ESES";
 
 const TopHeader = styled.header`
   display: flex;
@@ -135,7 +138,12 @@ const HeaderCountries = styled.div`
 `;
 
 export default function Header() {
-  const { locale } = useContext<LocaleContextState>(localeContext);
+  const { locale, setLocale } = useContext<LocaleContextState>(localeContext);
+
+  function changeCountry(newLocale: GlobalLocale) {
+    setLocale(newLocale);
+  }
+
   return (
     <>
       <MainHeader>
@@ -147,21 +155,21 @@ export default function Header() {
             <HeaderCountries>
               <span>{locale.type}</span>
               <div>
-                <button>
+                <button onClick={() => changeCountry(PTBRLocale)}>
                   <img
                     src={bandeiraBrasil}
                     alt="Uma bandeira do Brasil"
                     className="header-countries__country"
                   />
                 </button>
-                <button>
+                <button onClick={() => changeCountry(ESESLocale)}>
                   <img
                     src={bandeiraEspanha}
                     alt="Um Bandeira da Espanha"
                     className="header-countries__country"
                   />
                 </button>
-                <button>
+                <button onClick={() => changeCountry(ENUSLocale)}>
                   <img
                     src={bandeiraEua}
                     alt="Uma Bandeira dos EUA"
