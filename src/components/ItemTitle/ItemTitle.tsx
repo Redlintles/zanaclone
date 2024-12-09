@@ -24,19 +24,26 @@ interface ItemTitleProps {
   children: ReactNode;
   borderBottom?: boolean;
   bold?: boolean;
+  margin?: string;
+  padding?: string;
 }
 
 export default function ItemTitle({
   children,
   borderBottom,
   bold,
+  margin,
+  padding,
 }: ItemTitleProps) {
   const [manager] = useClassManager("", [
     [borderBottom, "item__title--b-bottom"],
     [bold, "item__title--bold"],
   ]);
   return (
-    <StyledItemTitle className={manager.getResult()}>
+    <StyledItemTitle
+      className={manager.getResult()}
+      style={{ margin, padding }}
+    >
       {children}
     </StyledItemTitle>
   );
