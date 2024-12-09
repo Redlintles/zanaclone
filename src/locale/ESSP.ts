@@ -10,68 +10,68 @@ const ESSPLocale: GlobalLocale = {
     history: {
       items: [
         {
-          title: "Histórico",
+          title: "Historia",
           child:
-            "Fundada e 1968, a Zanaflex produz Compostos de Borracha Sintética e Natural (masterbatch e composto acelerado) para diversos fins industriais. Situada em Cotia – São Paulo, fornece compostos técnicos de borracha de alta qualidade com preços competitivos a diversas empresas da cadeia automotiva (TIER 1) e reposição. Com equipamentos adequados para atender os requisitos de seus clientes combinado ao conhecimento técnico e um sistema da qualidade abrangente, a Zanaflex fornece compostos técnicos de borracha de alta qualidade numa gama variada de elastômeros sintéticos e naturais, pretos ou coloridos.",
+            "Fundada en 1968, Zanaflex produce compuestos de caucho sintético y natural (masterbatch y compuesto acelerado) para diversos fines industriales. Ubicada en Cotia – São Paulo, suministra compuestos técnicos de caucho de alta calidad a precios competitivos a varias empresas de la cadena automotriz (TIER 1) y reposición. Con equipos adecuados para satisfacer las necesidades de sus clientes, combinados con conocimientos técnicos y un sistema de calidad integral, Zanaflex ofrece compuestos de caucho técnicos de alta calidad en una amplia gama de elastómeros sintéticos y naturales, negros o de colores.",
         },
         {
-          title: "Soluções Tecnológicas em Produtos Elastômeros",
+          title: "Soluciones Tecnológicas en Productos Elastómeros",
           child:
-            "A Zanaflex é líder no mercado brasileiro de compostos de borracha, uma empresa com capacidade para desenvolver e produzir produtos personalizados para as mais diversas aplicações. Nossos clientes são nossos parceiros, por isso privilegiamos o cumprimento de prazos, e a dedicação à qualidade através do investimento em equipamentos cada vez mais sofisticados.",
+            "Zanaflex es líder en el mercado brasileño de compuestos de caucho, una empresa con capacidad de desarrollar y producir productos personalizados para las más diversas aplicaciones. Nuestros clientes son nuestros socios, por eso priorizamos el cumplimiento de los plazos y la dedicación a la calidad a través de la inversión en equipos cada vez más sofisticados.",
         },
       ],
       dialogs: [
         {
           year: 1968,
-          text: "Início das atividades na cidade de São Paulo",
+          text: "Inicio de actividades en la ciudad de São Paulo",
         },
         {
           year: 1978,
-          text: "Mudança para a cidade de Cotia com excelentes condições logísticas",
+          text: "Mudarse a la ciudad de Cotia con excelentes condiciones logísticas",
         },
         {
           year: 1992,
-          text: "Início da produção de compostos de borracha personalizados",
+          text: "Inicio de la producción de compuestos de caucho personalizados.",
         },
         {
           year: 1999,
-          text: "Conquistamos a Certificação ISO 9002:1994",
+          text: "Logramos la Certificación ISO 9002:1994",
         },
         {
           year: 2002,
-          text: "O primeiro misturador Intermix fabricado no Brasil",
+          text: "La primera mezcladora Intermix fabricada en Brasil",
         },
         {
           year: 2005,
-          text: "Expansão da fábrica, novo armazém e novas instalações para negro de fumo e pesagem automática",
+          text: "Ampliación de fábrica, nuevo almacén y nuevas instalaciones de negro de humo y pesaje automático",
         },
         {
           year: 2007,
-          text: "Inauguração da 5° linha de mistura de borracha",
+          text: "Inauguración de la 5ª línea de mezcla de caucho",
         },
         {
           year: 2009,
-          text: "Aumento de 50% da capacidade de mistura de borracha",
+          text: "50% de aumento en la capacidad de mezcla de caucho",
         },
         {
           year: 2012,
-          text: "Migração para ERP - SAP ECC 6.0 – Melhores práticas",
+          text: "Migración a ERP - SAP ECC 6.0 – Mejores prácticas",
         },
         {
           year: 2017,
-          text: "Atualização para a certificação ISO 9001:2015",
+          text: "Actualización para la certificación ISO 9001:2015",
         },
         {
           year: 2021,
-          text: "Inauguração da 7° linha de processamento",
+          text: "Apertura de la séptima línea de procesamiento",
         },
         {
           year: 2022,
-          text: "Conquistamos a Certificação IATF16949:2016 e Selo de Energia Renovável",
+          text: "Logramos la Certificación IATF16949:2016 y el Sello de Energías Renovables",
         },
         {
           year: 2023,
-          text: "18º reconhecimento Top Rubber",
+          text: "18º reconocimiento Top Rubber",
         },
       ],
     },
@@ -95,9 +95,9 @@ const ESSPLocale: GlobalLocale = {
   },
   logistics: {
     storage: {
-      title: "Armazenamento",
+      title: "Almacenamiento",
       child:
-        "O armazenamento das matérias-primas é feito em ambientes com temperatura rigorosamente controlada, bem como o controle dos prazos de validade. Respeitando as peculiaridades de cada insumo, desenvolvemos embalagens específicas para o melhor armazenamento, como Paletes de Madeira, Caixas e Barris de Papelão Reforçado, Caixas Plásticas Retornáveis e Caixas de Metal, tudo para garantir altíssima qualidade e performance na produção dos compostos de borracha.",
+        "El almacenamiento de materias primas se realiza en ambientes con temperaturas estrictamente controladas, así como control de fechas de caducidad. Respetando las particularidades de cada insumo, desarrollamos embalajes específicos para un mejor almacenamiento, como Pallets de Madera, Cajas y Barriles de Cartón Reforzado, Cajas Plásticas Retornables y Cajas Metálicas, todo para garantizar la más alta calidad y desempeño en la producción de compuestos de caucho.",
     },
     item: {
       title: "Proveedores internacionales",
