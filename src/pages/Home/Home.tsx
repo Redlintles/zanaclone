@@ -36,37 +36,30 @@ export default function Home() {
       <Container>
         <StyledHomeMain>
           <ItemHalf
+            padding="0"
             borderBottom
             leftElement={
-              <>
-                <ItemElement>
-                  <ItemTitle borderBottom>
-                    {locale.home.gridItems[0].title}
-                  </ItemTitle>
-                  <ItemText>
-                    {locale.home.gridItems[0].child as string}
-                  </ItemText>
-                  <ItemLink wFit to="/produtos/compostos-de-borracha">
-                    {locale.knowMore}
-                  </ItemLink>
-                </ItemElement>
-              </>
+              <ItemElement justifyContentStart>
+                <ItemTitle borderBottom>
+                  {locale.home.gridItems[0].title}
+                </ItemTitle>
+                <ItemText>{locale.home.gridItems[0].child as string}</ItemText>
+                <ItemLink wFit to="/produtos/compostos-de-borracha">
+                  {locale.knowMore}
+                </ItemLink>
+              </ItemElement>
             }
             rightElement={
-              <>
-                <ItemElement>
-                  <ItemTitle borderBottom>
-                    {locale.home.gridItems[1].title}
-                  </ItemTitle>
-                  <ItemText>
-                    {locale.home.gridItems[1].child as string}
-                  </ItemText>
-                  <img src={distributionsImg} alt="" />
-                  <ItemLink wFit to="/produtos/formatos-dos-compostos">
-                    {locale.knowMore}
-                  </ItemLink>
-                </ItemElement>
-              </>
+              <ItemElement>
+                <ItemTitle borderBottom>
+                  {locale.home.gridItems[1].title}
+                </ItemTitle>
+                <ItemText>{locale.home.gridItems[1].child as string}</ItemText>
+                <img src={distributionsImg} alt="" />
+                <ItemLink wFit to="/produtos/formatos-dos-compostos">
+                  {locale.knowMore}
+                </ItemLink>
+              </ItemElement>
             }
           />
 
