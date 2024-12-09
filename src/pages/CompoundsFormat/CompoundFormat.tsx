@@ -10,6 +10,27 @@ import product4 from "@assets/tiras-perfuradas.ff2e9063fca03ba3dce1.png";
 import product5 from "@assets/pre-formados.19964f413582344cc4a2.png";
 import product6 from "@assets/granulado.3e4b371b3424e407e961.png";
 import product7 from "@assets/calandrado.cef89e2a3f8f3e535ec7.png";
+import Container from "../../components/Container/Container";
+import ItemElement from "../../components/ItemElement/ItemElement";
+import ItemTitle from "../../components/ItemTitle/ItemTitle";
+import ItemText from "../../components/ItemText/ItemText";
+import Separator from "../../components/Separator/Separator";
+import styled from "styled-components";
+
+const StyledCompoundFormat = styled.article`
+  display: flex;
+  gap: 1rem;
+
+  .compound-format__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  & > img {
+    transform: scale(0.7, 0.7);
+  }
+`;
 
 export default function CompoundFormat() {
   const { locale } = useContext<LocaleContextState>(localeContext);
@@ -17,45 +38,50 @@ export default function CompoundFormat() {
   const images1 = [product1, product2, product3];
   const images2 = [product4, product5, product6, product7];
   return (
-    <>
+    <Container>
       <div className="compounds-f-main">
         <ItemHalf
           leftElement={
-            <>
+            <ItemElement justifyContentStart>
               <div>
-                <h2>{locale.logistics.compoundFormat.item.title}</h2>
-                <p>{locale.logistics.compoundFormat.item.child as string}</p>
+                <ItemTitle margin="0 auto 2rem" padding="0">
+                  {locale.logistics.compoundFormat.item.title}
+                </ItemTitle>
+                <ItemText>
+                  {locale.logistics.compoundFormat.item.child as string}
+                </ItemText>
               </div>
+              <Separator width="65%" />
               <div>
                 {locale.logistics.compoundFormat.formats1.map((item, index) => (
-                  <div>
+                  <StyledCompoundFormat>
                     <img src={images1[index]} alt="" />
-                    <div className="">
+                    <div className="compound-format__text">
                       <h5>{item.title}</h5>
-                      <p>{item.child as string}</p>
+                      <ItemText>{item.child as string}</ItemText>
                     </div>
-                  </div>
+                  </StyledCompoundFormat>
                 ))}
               </div>
-            </>
+            </ItemElement>
           }
           rightElement={
             <>
-              <div>
+              <ItemElement justifyContentStart>
                 {locale.logistics.compoundFormat.formats2.map((item, index) => (
-                  <div>
+                  <StyledCompoundFormat>
                     <img src={images2[index]} alt="" />
-                    <div className="">
+                    <div className="compound-format__text">
                       <h5>{item.title}</h5>
-                      <p>{item.child as string}</p>
+                      <ItemText>{item.child as string}</ItemText>
                     </div>
-                  </div>
+                  </StyledCompoundFormat>
                 ))}
-              </div>
+              </ItemElement>
             </>
           }
         />
       </div>
-    </>
+    </Container>
   );
 }
