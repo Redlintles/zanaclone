@@ -13,9 +13,10 @@ const StyledItemLink = styled.div`
   border-radius: 50px;
   transition: 0.25s ease background-color;
   cursor: pointer;
-  width: fit-content;
+  width: 100%;
   margin: 2rem auto;
   position: relative;
+  white-space: nowrap;
 
   & > a {
     text-transform: uppercase;
