@@ -25,5 +25,9 @@ export default function ItemText({
   const [manager] = useClassManager("", []);
 
   manager.append([textCenter, "item__text--center"]);
-  return <StyledItemText style={{ fontSize }}>{children}</StyledItemText>;
+  return (
+    <StyledItemText style={{ fontSize }} className={manager.getResult()}>
+      {children}
+    </StyledItemText>
+  );
 }
