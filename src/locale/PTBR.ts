@@ -666,7 +666,8 @@ const PTBRLocale: GlobalLocale = {
     workWithUs: {
       title: "Trabalhe com a gente",
       paragraphs: [
-        "As pessoas são o meio e o fim dos esforços da Zanaflex.Por isso, nada mais natural que manter um ambiente de oportunidades baseado na ética, transparência e no crescimento pessoal e profissional.",
+        "As pessoas são o meio e o fim dos esforços da Zanaflex.",
+        "Por isso, nada mais natural que manter um ambiente de oportunidades baseado na ética, transparência e no crescimento pessoal e profissional.",
         "Inscreva-se em nosso banco de talentos e participe de nossos processo seletivos!",
         "Envie seu currículo e pretensão salarial para:",
         "rh@zanaflex.com.br",

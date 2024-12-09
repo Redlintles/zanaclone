@@ -303,7 +303,8 @@ const ENUSLocale: GlobalLocale = {
         "Submit",
       ],
       paragraphs: [
-        "People are the means and the end of Zanaflex's efforts. Therefore, there is nothing more natural than maintaining an environment of opportunities based on ethics, transparency, and personal and professional growth.",
+        "People are the means and the end of Zanaflex's efforts.",
+        "Therefore, there is nothing more natural than maintaining an environment of opportunities based on ethics, transparency, and personal and professional growth.",
         "Sign up for our talent pool and participate in our selection processes!",
         "Send your resume and salary claim to:",
         "rh@zanaflex.com.br",

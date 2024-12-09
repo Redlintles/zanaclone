@@ -202,7 +202,8 @@ const ESESLocale: GlobalLocale = {
         "Enviar",
       ],
       paragraphs: [
-        "Las personas son el medio y el fin de los esfuerzos de Zanaflex. Por lo tanto, no hay nada más natural que mantener un entorno de oportunidades basado en la ética, la transparencia y el crecimiento personal y profesional.",
+        "Las personas son el medio y el fin de los esfuerzos de Zanaflex.",
+        "Por lo tanto, no hay nada más natural que mantener un entorno de oportunidades basado en la ética, la transparencia y el crecimiento personal y profesional.",
         "¡Inscríbete en nuestra bolsa de talentos y participa en nuestros procesos de selección!",
         "Envíe su currículum vitae y su reclamación salarial a:",
         "rh@zanaflex.com.br",
