@@ -1,7 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import Header from "@components/Header/Header";
-import Footer from "@components/Footer/Footer";
 import Home from "@pages/Home/Home";
 import Facilities from "@pages/Facilities/Facilities";
 import Labs from "@pages/Labs/Labs";
@@ -31,6 +29,7 @@ import QualityLayout from "@layouts/QualityLayout";
 import LogisticLayout from "@layouts/LogisticLayout";
 import ProductsLayout from "@layouts/ProductsLayout";
 import ContactLayout from "@layouts/ContactLayout";
+import Layout from "./layouts/Layout";
 
 function App() {
   const { pathname } = useLocation();
@@ -48,8 +47,7 @@ function App() {
     }
   }, [pathname, locale]);
   return (
-    <>
-      <Header />
+    <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dt" element={<DevAndTech />} />
@@ -90,8 +88,7 @@ function App() {
           <Route path="trabalhe-conosco" element={<WorkWithUs />} />
         </Route>
       </Routes>
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
