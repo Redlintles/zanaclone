@@ -48,7 +48,7 @@ const StyledItemLink = styled.div`
 `;
 
 export default function ItemLink({ to, children, wFit }: ItemLinkProps) {
-  const [manager] = useClassManager("", [[wFit, "item__link-fit-content"]]);
+  const [manager] = useClassManager("", [[wFit, "item__link--fit-content"]]);
   return (
     <StyledItemLink className={manager.getResult()}>
       <Link to={to}>{children}</Link>
