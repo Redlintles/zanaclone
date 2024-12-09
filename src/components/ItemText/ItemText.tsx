@@ -6,6 +6,8 @@ interface ItemTextProps {
   children: ReactNode;
   textCenter?: boolean;
   fontSize?: string;
+  fontWeight?: string;
+  textUnderline?: boolean;
 }
 
 const StyledItemText = styled.p`
@@ -16,17 +18,26 @@ const StyledItemText = styled.p`
   &.item__text--center {
     text-align: center;
   }
+  &.item__text--underline {
+    text-decoration: underline;
+  }
 `;
 export default function ItemText({
   children,
   textCenter,
   fontSize,
+  fontWeight,
+  textUnderline,
 }: ItemTextProps) {
   const [manager] = useClassManager("", []);
 
   manager.append([textCenter, "item__text--center"]);
+  manager.append([textUnderline, "item__text--underline"]);
   return (
-    <StyledItemText style={{ fontSize }} className={manager.getResult()}>
+    <StyledItemText
+      style={{ fontSize, fontWeight }}
+      className={manager.getResult()}
+    >
       {children}
     </StyledItemText>
   );
