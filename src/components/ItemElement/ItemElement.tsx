@@ -19,6 +19,10 @@ const StyledItemElement = styled.article`
   &.item--direction-row {
     flex-direction: row;
   }
+
+  &.item--justify-start {
+    justify-content: flex-start;
+  }
 `;
 
 interface ItemElementProps {
@@ -29,6 +33,7 @@ interface ItemElementProps {
   margin?: string;
   width?: string;
   directionRow?: boolean;
+  justifyContentStart?: boolean;
 }
 
 export default function ItemElement({
@@ -39,10 +44,12 @@ export default function ItemElement({
   margin,
   width,
   directionRow,
+  justifyContentStart,
 }: ItemElementProps) {
   const [manager] = useClassManager("", [
     [outline, "item--outline"],
     [directionRow, "item--direction-row"],
+    [justifyContentStart, "item--justify-start"],
   ]);
 
   return (
