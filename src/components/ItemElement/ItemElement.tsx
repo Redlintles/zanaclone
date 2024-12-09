@@ -15,6 +15,10 @@ const StyledItemElement = styled.article`
   &.item--outline {
     border: 1px solid var(--color-gray);
   }
+
+  &.item--direction-row {
+    flex-direction: row;
+  }
 `;
 
 interface ItemElementProps {
@@ -24,6 +28,7 @@ interface ItemElementProps {
   gap?: string;
   margin?: string;
   width?: string;
+  directionRow?: boolean;
 }
 
 export default function ItemElement({
@@ -33,8 +38,12 @@ export default function ItemElement({
   gap,
   margin,
   width,
+  directionRow,
 }: ItemElementProps) {
-  const [manager] = useClassManager("", [[outline, "item--outline"]]);
+  const [manager] = useClassManager("", [
+    [outline, "item--outline"],
+    [directionRow, "item--direction-row"],
+  ]);
 
   return (
     <StyledItemElement
