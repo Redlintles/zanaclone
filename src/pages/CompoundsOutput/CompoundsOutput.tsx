@@ -10,12 +10,12 @@ import slideImg4 from "@assets/4.9c471b7742942084ac50.png";
 import slideImg5 from "@assets/5.0803fb2f6cb1e905bde4.png";
 
 import rightImg from "@assets/embalagens.57fd184c1374a660b29a.png";
-import Container from "../../components/Container/Container";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
-import ItemElement from "../../components/ItemElement/ItemElement";
-import Separator from "../../components/Separator/Separator";
-import ItemImg from "../../components/ItemImg/ItemImg";
+import Container from "@components/Container/Container";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
+import ItemElement from "@components/ItemElement/ItemElement";
+import Separator from "@components/Separator/Separator";
+import ItemImg from "@components/ItemImg/ItemImg";
 export default function CompoundsOutput() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
