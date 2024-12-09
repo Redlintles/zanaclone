@@ -1,7 +1,7 @@
 import GlobalLocale from "@app-types/locale";
 
 const ESSPLocale: GlobalLocale = {
-  type: "PT-BR",
+  type: "ES-ES",
   knowMore: "Aprenda más",
   footer: {
     text: "ZANAFLEX - Soluciones tecnológicas en productos elastoméricos Copyright© 2022 - Zanaflex Borrachas Ltda - Todos los derechos reservados.",
