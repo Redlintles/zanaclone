@@ -1,6 +1,6 @@
 import GlobalLocale from "@app-types/locale";
 
-const ESSPLocale: GlobalLocale = {
+const ESESLocale: GlobalLocale = {
   type: "ES-ES",
   knowMore: "Aprenda más",
   footer: {
@@ -796,4 +796,4 @@ const ESSPLocale: GlobalLocale = {
   },
 };
 
-export default ESSPLocale;
+export default ESESLocale;
