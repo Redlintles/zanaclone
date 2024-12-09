@@ -414,8 +414,30 @@ const PTBRLocale: GlobalLocale = {
             "Comprometida sempre com a qualidade dos produtos e serviços, a Zanaflex participa dos principais programas de proficiência entre os laboratórios de ensaio de borracha. A avaliação dessas análises são realizadas por organismos independentes (Senai e IPT) garantindo a imparcialidade e demonstrando nossa capacidade de atender as exigências do mercado.",
         },
         fispqs: {
-          title: "FISPQ'S",
-          child: "Ficha de Informações de Segurança de Produtos Químicos.",
+          item: {
+            title: "FISPQ'S",
+            child: "Ficha de Informações de Segurança de Produtos Químicos.",
+          },
+          links: [
+            {
+              to: "/qualidade/certificados",
+              top: ["Certificado", "ISO 9001-2008"],
+              bottom:
+                "Desenvolvimento e Manufatura de Compostos e Produtos Moldados de Borracha",
+            },
+            {
+              to: "/qualidade/politica-do-sgi",
+
+              top: ["Política", "Ambiental"],
+              bottom: "Sistema Ambiental totalmente licenciado e controlado",
+            },
+            {
+              to: "/infraestrutura/laboratorios",
+              top: ["Laboratórios"],
+              bottom:
+                "Altamente equipados e com capacidade para realizar diversos tipos de analises em nossas matérias-primas, compostos e produtos vulcanizados",
+            },
+          ],
         },
       },
     },

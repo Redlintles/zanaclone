@@ -71,7 +71,10 @@ interface SGILocale {
   subtitle: string;
   proficiency: {
     item: GridItem;
-    fispqs: GridItem;
+    fispqs: {
+      item: GridItem;
+      links: Array<{ to: string; top: string[]; bottom: string }>;
+    };
   };
 }
 

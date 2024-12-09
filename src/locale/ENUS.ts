@@ -373,8 +373,30 @@ const ENUSLocale: GlobalLocale = {
           title: "proficiency",
         },
         fispqs: {
-          title: "FISPQ'S",
-          child: "Chemical Safety Information Sheet.",
+          item: {
+            title: "FISPQ'S",
+            child: "Chemical Safety Information Sheet.",
+          },
+          links: [
+            {
+              to: "/qualidade/certificados",
+              top: ["Certificate", "ISO 9001-2008"],
+              bottom:
+                "Development and Manufacturing of Rubber Compounds and Molded Products",
+            },
+            {
+              to: "/qualidade/politica-do-sgi",
+
+              top: ["Policy", "Environmental"],
+              bottom: "Fully licensed and controlled Environmental System",
+            },
+            {
+              to: "/infraestrutura/laboratorios",
+              top: ["Laboratories"],
+              bottom:
+                "Highly equipped and capable of carrying out various types of analyses on our raw materials, compounds and vulcanized products",
+            },
+          ],
         },
       },
       main: {

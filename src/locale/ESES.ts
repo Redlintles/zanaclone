@@ -297,8 +297,30 @@ const ESESLocale: GlobalLocale = {
       subtitle: "Calidad, medio ambiente, salud y seguridad",
       proficiency: {
         fispqs: {
-          child: "Hoja de información de seguridad química.",
-          title: "FISPQ",
+          item: {
+            child: "Hoja de información de seguridad química.",
+            title: "FISPQ",
+          },
+          links: [
+            {
+              to: "/qualidade/certificados",
+              top: ["Certificado", "ISO 9001-2008"],
+              bottom:
+                "Desarrollo y fabricación de compuestos de caucho y productos moldeados.",
+            },
+            {
+              to: "/qualidade/politica-do-sgi",
+
+              top: ["Política", "Ambiental"],
+              bottom: "Sistema ambiental totalmente autorizado y controlado",
+            },
+            {
+              to: "/infraestrutura/laboratorios",
+              top: ["Laboratorios"],
+              bottom:
+                "Altamente equipados y capaces de realizar diferentes tipos de análisis sobre nuestras materias primas, compuestos y productos vulcanizados.",
+            },
+          ],
         },
         item: {
           title: "Competencia",
