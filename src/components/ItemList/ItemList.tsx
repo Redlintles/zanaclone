@@ -3,6 +3,7 @@ import ItemText from "../ItemText/ItemText";
 
 interface ItemListProps {
   items: string[];
+  gap?: string;
 }
 
 const StyledItemList = styled.ul`
@@ -26,9 +27,9 @@ const StyledItemList = styled.ul`
   }
 `;
 
-export default function ItemList({ items }: ItemListProps) {
+export default function ItemList({ items, gap }: ItemListProps) {
   return (
-    <StyledItemList>
+    <StyledItemList style={{ gap }}>
       {items.map((item, index) => (
         <li key={index} className="item-list__item">
           <ItemText>{item}</ItemText>
