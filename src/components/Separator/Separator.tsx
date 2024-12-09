@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledSeparator = styled.span`
+  display: block;
   width: 100%;
   height: 5px;
   background-color: var(--color-gray);
