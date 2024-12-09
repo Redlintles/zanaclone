@@ -1,6 +1,7 @@
 import cultureImg from "@assets/cultura.bcf7316d55e0217a58e8.png";
-import ItemImg from "../../components/ItemImg/ItemImg";
+import ItemImg from "@components/ItemImg/ItemImg";
 import styled from "styled-components";
+import Container from "@components/Container/Container";
 
 const StyledCulture = styled.section`
   width: 100%;
@@ -9,8 +10,10 @@ const StyledCulture = styled.section`
 
 export default function Culture() {
   return (
-    <StyledCulture>
-      <ItemImg src={cultureImg} />
-    </StyledCulture>
+    <Container>
+      <StyledCulture>
+        <ItemImg src={cultureImg} />
+      </StyledCulture>
+    </Container>
   );
 }

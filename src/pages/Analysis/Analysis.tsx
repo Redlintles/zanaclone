@@ -10,57 +10,62 @@ import { useContext } from "react";
 import { LocaleContextState } from "@app-types/locale";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import ItemList from "@components/ItemList/ItemList";
-import ItemHalf from "../../components/ItemHalf/ItemHalf";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemElement from "../../components/ItemElement/ItemElement";
-import ItemImg from "../../components/ItemImg/ItemImg";
+import ItemHalf from "@components/ItemHalf/ItemHalf";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemElement from "@components/ItemElement/ItemElement";
+import ItemImg from "@components/ItemImg/ItemImg";
+import Container from "@components/Container/Container";
 export default function Analysis() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <section className="analysis-main">
-      <ItemHalf
-        leftElement={
-          <ItemElement>
-            <SlideShow images={[slideImg1, slideImg2, slideImg3, slideImg4]} />
-          </ItemElement>
-        }
-        rightElement={
-          <ItemElement>
-            <ItemTitle>
-              {locale.infrastructure.analysisPage.gridItems[0].title}
-            </ItemTitle>
+    <Container>
+      <section className="analysis-main">
+        <ItemHalf
+          leftElement={
+            <ItemElement>
+              <SlideShow
+                images={[slideImg1, slideImg2, slideImg3, slideImg4]}
+              />
+            </ItemElement>
+          }
+          rightElement={
+            <ItemElement>
+              <ItemTitle>
+                {locale.infrastructure.analysisPage.gridItems[0].title}
+              </ItemTitle>
 
-            <ItemList
-              items={
-                locale.infrastructure.analysisPage.gridItems[0]
-                  .child as string[]
-              }
-            />
-          </ItemElement>
-        }
-        borderBottom
-      />
+              <ItemList
+                items={
+                  locale.infrastructure.analysisPage.gridItems[0]
+                    .child as string[]
+                }
+              />
+            </ItemElement>
+          }
+          borderBottom
+        />
 
-      <ItemHalf
-        leftElement={
-          <ItemElement>
-            <ItemTitle>
-              {locale.infrastructure.analysisPage.gridItems[1].title}
-            </ItemTitle>
-            <ItemList
-              items={
-                locale.infrastructure.analysisPage.gridItems[1]
-                  .child as string[]
-              }
-            />
-          </ItemElement>
-        }
-        rightElement={
-          <ItemElement padding={"3rem 0 0"}>
-            <ItemImg src={analysis2Img} />
-          </ItemElement>
-        }
-      />
-    </section>
+        <ItemHalf
+          leftElement={
+            <ItemElement>
+              <ItemTitle>
+                {locale.infrastructure.analysisPage.gridItems[1].title}
+              </ItemTitle>
+              <ItemList
+                items={
+                  locale.infrastructure.analysisPage.gridItems[1]
+                    .child as string[]
+                }
+              />
+            </ItemElement>
+          }
+          rightElement={
+            <ItemElement padding={"3rem 0 0"}>
+              <ItemImg src={analysis2Img} />
+            </ItemElement>
+          }
+        />
+      </section>
+    </Container>
   );
 }

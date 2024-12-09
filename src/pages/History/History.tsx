@@ -3,14 +3,15 @@ import localeContext from "@context/LocaleContext/LocaleContext";
 import { LocaleContextState } from "@app-types/locale";
 
 import logoSolo from "@assets/logo-solo.b0401efe22357fcf2e2b.png";
-import ItemHalf from "../../components/ItemHalf/ItemHalf";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
-import ItemFull from "../../components/ItemFull/ItemFull";
-import ItemImg from "../../components/ItemImg/ItemImg";
+import ItemHalf from "@components/ItemHalf/ItemHalf";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
+import ItemFull from "@components/ItemFull/ItemFull";
+import ItemImg from "@components/ItemImg/ItemImg";
 import styled from "styled-components";
-import TermsAndConditions from "../../components/TermsAndConditions/TermsAndConditions";
-import ItemElement from "../../components/ItemElement/ItemElement";
+import TermsAndConditions from "@components/TermsAndConditions/TermsAndConditions";
+import ItemElement from "@components/ItemElement/ItemElement";
+import Container from "@components/Container/Container";
 
 const HistoryTimeline = styled.section`
   margin: 0 12rem;
@@ -103,7 +104,7 @@ const HistoryTimeline = styled.section`
 export default function History() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <>
+    <Container>
       <section className="history-main">
         <ItemHalf
           leftElement={
@@ -147,6 +148,6 @@ export default function History() {
           ))}
       </HistoryTimeline>
       <TermsAndConditions />
-    </>
+    </Container>
   );
 }

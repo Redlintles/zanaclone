@@ -12,11 +12,12 @@ import ItemList from "@components/ItemList/ItemList";
 import ItemHalf from "../../components/ItemHalf/ItemHalf";
 import ItemTitle from "../../components/ItemTitle/ItemTitle";
 import ItemElement from "../../components/ItemElement/ItemElement";
+import Container from "../../components/Container/Container";
 
 export default function Facilities() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <>
+    <Container>
       <section className="facilities-main">
         <ItemHalf
           leftElement={
@@ -44,6 +45,6 @@ export default function Facilities() {
           }
         />
       </section>
-    </>
+    </Container>
   );
 }

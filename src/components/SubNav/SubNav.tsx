@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import Container from "@components/Container/Container";
 
 interface SubNavProps {
   links: Array<{ text: string; to: string }>;
@@ -35,20 +36,22 @@ export default function SubNav({ links }: SubNavProps) {
     superLink = match[1];
   }
   return (
-    <StyledSubNav>
-      {links &&
-        links.map((item, index) => (
-          <NavLink
-            key={index}
-            className={({ isActive }) =>
-              "subnav__link" +
-              (isActive === true ? " subnav__link--active" : "")
-            }
-            to={superLink + item.to}
-          >
-            {item.text}
-          </NavLink>
-        ))}
-    </StyledSubNav>
+    <Container>
+      <StyledSubNav>
+        {links &&
+          links.map((item, index) => (
+            <NavLink
+              key={index}
+              className={({ isActive }) =>
+                "subnav__link" +
+                (isActive === true ? " subnav__link--active" : "")
+              }
+              to={superLink + item.to}
+            >
+              {item.text}
+            </NavLink>
+          ))}
+      </StyledSubNav>
+    </Container>
   );
 }

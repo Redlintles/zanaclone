@@ -9,6 +9,10 @@
 
 }
 
+
+body {
+  overflow-x: hidden;
+}
 * {
   box-sizing: border-box;
   font-family: "Maven Pro", sans-serif;

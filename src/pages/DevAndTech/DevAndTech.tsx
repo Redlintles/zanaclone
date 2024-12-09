@@ -5,16 +5,16 @@ import SubNav from "@components/SubNav/SubNav";
 import itemImg1 from "@assets/vantagens.96787b694afc989430ca.png";
 import itemOutlineImg from "@assets/download.png";
 import ItemList from "@components/ItemList/ItemList";
-import Main from "../../components/Main/Main";
-import ItemHalf from "../../components/ItemHalf/ItemHalf";
-import ItemElement from "../../components/ItemElement/ItemElement";
-import ItemImg from "../../components/ItemImg/ItemImg";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
+import ItemHalf from "@components/ItemHalf/ItemHalf";
+import ItemElement from "@components/ItemElement/ItemElement";
+import ItemImg from "@components/ItemImg/ItemImg";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
+import Container from "@components/Container/Container";
 export default function DevAndTech() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Main>
+    <Container>
       <section className="dt-main">
         <SubNav links={locale.devAndTech.sublinks} />
 
@@ -52,6 +52,6 @@ export default function DevAndTech() {
           }
         />
       </section>
-    </Main>
+    </Container>
   );
 }
