@@ -295,13 +295,13 @@ const ESESLocale: GlobalLocale = {
     sgi: {
       title: "Sistema de gestión integrado",
       subtitle: "Calidad, medio ambiente, salud y seguridad",
-      proeficiency: {
+      proficiency: {
         fispqs: {
           child: "Hoja de información de seguridad química.",
           title: "FISPQ",
         },
         item: {
-          title: "Términos y condiciones generales",
+          title: "Competencia",
           child:
             "Siempre comprometida con la calidad de los productos y servicios, Zanaflex participa en los principales programas de competencia entre los laboratorios de pruebas de caucho. La evaluación de estos análisis la llevan a cabo organismos independientes (Senai e IPT), lo que garantiza la imparcialidad y demuestra nuestra capacidad para cumplir con los requisitos del mercado.",
         },

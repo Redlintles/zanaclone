@@ -69,7 +69,7 @@ interface SGILocale {
   main: GridItem;
   title: string;
   subtitle: string;
-  proeficiency: {
+  proficiency: {
     item: GridItem;
     fispqs: GridItem;
   };

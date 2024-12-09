@@ -366,11 +366,11 @@ const ENUSLocale: GlobalLocale = {
     sgi: {
       subtitle: "Quality, Environment, Health and Safety",
       title: "Integrated Management System",
-      proeficiency: {
+      proficiency: {
         item: {
           child:
             "Always committed to the quality of products and services, Zanaflex participates in the main proficiency programs among rubber testing laboratories. The evaluation of these analyses is carried out by independent bodies (Senai and IPT), ensuring impartiality and demonstrating our ability to meet market requirements.",
-          title: "General Terms and Conditions",
+          title: "proficiency",
         },
         fispqs: {
           title: "FISPQ'S",

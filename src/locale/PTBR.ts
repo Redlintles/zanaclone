@@ -407,9 +407,9 @@ const PTBRLocale: GlobalLocale = {
       },
       title: "Sistema de Gestão Integrado",
       subtitle: "Qualidade, Meio Ambiente, Saúde e Segurança",
-      proeficiency: {
+      proficiency: {
         item: {
-          title: "Termo e Condições Gerais",
+          title: "Proeficiencia",
           child:
             "Comprometida sempre com a qualidade dos produtos e serviços, a Zanaflex participa dos principais programas de proficiência entre os laboratórios de ensaio de borracha. A avaliação dessas análises são realizadas por organismos independentes (Senai e IPT) garantindo a imparcialidade e demonstrando nossa capacidade de atender as exigências do mercado.",
         },
