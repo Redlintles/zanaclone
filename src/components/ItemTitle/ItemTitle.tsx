@@ -7,7 +7,7 @@ const StyledItemTitle = styled.h2`
   font-size: 1.5rem;
   padding-bottom: 2rem;
 
-  &.item__title-b-bottom {
+  &.item__title--b-bottom {
     border-bottom: 4px solid var(--color-gray);
   }
 
