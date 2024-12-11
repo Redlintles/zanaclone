@@ -30,11 +30,11 @@ const StyledSGIMain = styled.section`
     }
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
   }
 `;
@@ -100,9 +100,10 @@ export default function SGI() {
           </div>
 
           <ItemHalf
+            padding="2rem 0"
             leftElement={
               <ItemElement>
-                <ItemTitle>
+                <ItemTitle borderBottom>
                   {locale.qualityAndEnvironment.sgi.main.title}
                 </ItemTitle>
                 <ItemText>
@@ -117,7 +118,7 @@ export default function SGI() {
             }
             rightElement={
               <ItemElement>
-                <ItemImg src={sgiImg} width="50%" />
+                <ItemImg src={sgiImg} width="30%" />
               </ItemElement>
             }
             borderBottom
