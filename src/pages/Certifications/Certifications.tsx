@@ -7,10 +7,10 @@ import cert1 from "@assets/certificado_energia.6c49db46489789fc6f7a.png";
 import cert2 from "@assets/certificado_iatf.a9c8522a07bbc45290bf.png";
 import cert3 from "@assets/certificadotuvnord.45bcc988e3e9a9505046.png";
 import styled from "styled-components";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
-import Container from "../../components/Container/Container";
-import ItemLink from "../../components/ItemLink/ItemLink";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
+import Container from "@components/Container/Container";
+import ItemLink from "@components/ItemLink/ItemLink";
 import { Link } from "react-router-dom";
 
 const CertMainImg = styled.div`

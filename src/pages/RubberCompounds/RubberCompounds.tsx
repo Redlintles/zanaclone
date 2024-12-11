@@ -11,10 +11,10 @@ import slideImg3 from "@assets/3.77fae1a72a94cc29cf9f.png";
 import slideImg4 from "@assets/4.b0b6046ea862fb1bd717.png";
 import slideImg5 from "@assets/5.78332f75ef7be2b32c46.png";
 import slideImg6 from "@assets/6.6506603be7f22affdb74.png";
-import Container from "../../components/Container/Container";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemLink from "../../components/ItemLink/ItemLink";
-import ItemElement from "../../components/ItemElement/ItemElement";
+import Container from "@components/Container/Container";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemLink from "@components/ItemLink/ItemLink";
+import ItemElement from "@components/ItemElement/ItemElement";
 import styled from "styled-components";
 
 const StyledLeftContainer = styled.div`

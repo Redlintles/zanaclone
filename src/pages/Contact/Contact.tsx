@@ -1,11 +1,11 @@
 import { LocaleContextState } from "@app-types/locale";
 import { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
-import Container from "../../components/Container/Container";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import Separator from "../../components/Separator/Separator";
+import Container from "@components/Container/Container";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import Separator from "@components/Separator/Separator";
 import styled from "styled-components";
-import ItemText from "../../components/ItemText/ItemText";
+import ItemText from "@components/ItemText/ItemText";
 import { Link } from "react-router-dom";
 
 const StyledContactMain = styled.section`

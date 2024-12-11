@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-import useClassManager from "../../hooks/useClassManager";
+import useClassManager from "@hooks/useClassManager";
 
 const ItemHalfContainer = styled.div`
   display: grid;

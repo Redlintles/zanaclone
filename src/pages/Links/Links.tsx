@@ -2,12 +2,12 @@ import { LocaleContextState } from "@app-types/locale";
 import { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import { LinkCalls } from "@app-types/locale";
-import Container from "../../components/Container/Container";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
+import Container from "@components/Container/Container";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
 import styled from "styled-components";
-import ItemText from "../../components/ItemText/ItemText";
+import ItemText from "@components/ItemText/ItemText";
 import { Link } from "react-router-dom";
-import ItemElement from "../../components/ItemElement/ItemElement";
+import ItemElement from "@components/ItemElement/ItemElement";
 
 const StyledLinkList = styled.ul`
   padding-left: 2rem;

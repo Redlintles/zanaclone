@@ -1,7 +1,7 @@
 import { LocaleContextState } from "@app-types/locale";
 import { useContext } from "react";
 import styled from "styled-components";
-import localeContext from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
 
 const StyledFooter = styled.footer`
   background-color: var(--color-dark-bg);

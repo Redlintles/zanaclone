@@ -10,11 +10,11 @@ import product4 from "@assets/tiras-perfuradas.ff2e9063fca03ba3dce1.png";
 import product5 from "@assets/pre-formados.19964f413582344cc4a2.png";
 import product6 from "@assets/granulado.3e4b371b3424e407e961.png";
 import product7 from "@assets/calandrado.cef89e2a3f8f3e535ec7.png";
-import Container from "../../components/Container/Container";
-import ItemElement from "../../components/ItemElement/ItemElement";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
-import Separator from "../../components/Separator/Separator";
+import Container from "@components/Container/Container";
+import ItemElement from "@components/ItemElement/ItemElement";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
+import Separator from "@components/Separator/Separator";
 import styled from "styled-components";
 
 const StyledCompoundFormat = styled.article`

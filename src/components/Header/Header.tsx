@@ -9,9 +9,9 @@ import bandeiraEua from "@assets/bandeira-eua.e961ece6e927d8260a82.png";
 import logoZanaflex from "@assets/logo-zanaflex.png";
 import { FaCaretDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import PTBRLocale from "../../locale/PTBR";
-import ENUSLocale from "../../locale/ENUS";
-import ESESLocale from "../../locale/ESES";
+import PTBRLocale from "@locale/PTBR";
+import ENUSLocale from "@locale/ENUS";
+import ESESLocale from "@locale/ESES";
 
 const TopHeader = styled.header`
   display: flex;

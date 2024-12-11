@@ -1,10 +1,10 @@
 import { LocaleContextState } from "@app-types/locale";
 import React, { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
-import ItemText from "../../components/ItemText/ItemText";
-import Container from "../../components/Container/Container";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import Separator from "../../components/Separator/Separator";
+import ItemText from "@components/ItemText/ItemText";
+import Container from "@components/Container/Container";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import Separator from "@components/Separator/Separator";
 import styled from "styled-components";
 
 const StyledWorkMainTop = styled.section`

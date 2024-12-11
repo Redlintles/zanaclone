@@ -1,12 +1,12 @@
 import { LocaleContextState } from "@app-types/locale";
 import { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
-import Container from "../../components/Container/Container";
-import ItemLink from "../../components/ItemLink/ItemLink";
-import ItemElement from "../../components/ItemElement/ItemElement";
-import ItemFull from "../../components/ItemFull/ItemFull";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
+import Container from "@components/Container/Container";
+import ItemLink from "@components/ItemLink/ItemLink";
+import ItemElement from "@components/ItemElement/ItemElement";
+import ItemFull from "@components/ItemFull/ItemFull";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
 import styled from "styled-components";
 
 const StyledSupplierAreaMain = styled.section`

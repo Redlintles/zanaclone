@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import localeContext from "../../context/LocaleContext/LocaleContext";
+import localeContext from "@context/LocaleContext/LocaleContext";
 import { LocaleContextState } from "@app-types/locale";
 
 const StyledTermsAndConditions = styled.div`

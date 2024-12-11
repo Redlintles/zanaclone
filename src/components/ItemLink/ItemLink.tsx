@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import useClassManager from "../../hooks/useClassManager";
+import useClassManager from "@hooks/useClassManager";
 
 interface ItemLinkProps {
   to: string;

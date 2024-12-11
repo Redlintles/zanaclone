@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { LocaleContextState } from "@app-types/locale";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import ItemList from "@components/ItemList/ItemList";
-import ItemTitle from "../../components/ItemTitle/ItemTitle";
-import ItemText from "../../components/ItemText/ItemText";
-import Container from "../../components/Container/Container";
-import ItemElement from "../../components/ItemElement/ItemElement";
+import ItemTitle from "@components/ItemTitle/ItemTitle";
+import ItemText from "@components/ItemText/ItemText";
+import Container from "@components/Container/Container";
+import ItemElement from "@components/ItemElement/ItemElement";
 
 export default function FISPQS() {
   const { locale } = useContext<LocaleContextState>(localeContext);

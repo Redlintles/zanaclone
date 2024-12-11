@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-import useClassManager from "../../hooks/useClassManager";
+import useClassManager from "@hooks/useClassManager";
 
 const StyledItemFull = styled.article`
   padding: 4rem 1rem;

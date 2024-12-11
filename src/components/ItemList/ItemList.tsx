@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ItemText from "../ItemText/ItemText";
+import ItemText from "@components/ItemText/ItemText";
 
 interface ItemListProps {
   items: string[];

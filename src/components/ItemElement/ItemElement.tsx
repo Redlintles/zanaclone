@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import useClassManager from "../../hooks/useClassManager";
+import useClassManager from "@hooks/useClassManager";
 
 const StyledItemElement = styled.article`
   display: flex;

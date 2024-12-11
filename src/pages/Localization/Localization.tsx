@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Container from "../../components/Container/Container";
-import ItemText from "../../components/ItemText/ItemText";
+import Container from "@components/Container/Container";
+import ItemText from "@components/ItemText/ItemText";
 import styled from "styled-components";
 
 const StyledLocalizationMain = styled.div`
