@@ -18,11 +18,12 @@ import Container from "@components/Container/Container";
 export default function Analysis() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container padding="0 18rem">
       <section className="analysis-main">
         <ItemHalf
+          padding="0"
           leftElement={
-            <ItemElement>
+            <ItemElement width="80%" margin="0 auto">
               <SlideShow
                 images={[slideImg1, slideImg2, slideImg3, slideImg4]}
               />
@@ -30,7 +31,7 @@ export default function Analysis() {
           }
           rightElement={
             <ItemElement>
-              <ItemTitle>
+              <ItemTitle borderBottom>
                 {locale.infrastructure.analysisPage.gridItems[0].title}
               </ItemTitle>
 
@@ -48,7 +49,7 @@ export default function Analysis() {
         <ItemHalf
           leftElement={
             <ItemElement>
-              <ItemTitle>
+              <ItemTitle borderBottom>
                 {locale.infrastructure.analysisPage.gridItems[1].title}
               </ItemTitle>
               <ItemList
