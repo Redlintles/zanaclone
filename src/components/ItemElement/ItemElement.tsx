@@ -1,7 +1,13 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 import useClassManager from "@hooks/useClassManager";
-import SlideInFromLeft from "../../Animations/SlideInFromLeft";
+import {
+  SlideInFromLeft,
+  SlideInFromBottom,
+  SlideInFromRight,
+  SlideInFromTop,
+} from "../../Animations/SlideIn";
+import useAnimationToggler from "../../hooks/useAnimationToggler";
 
 const StyledItemElement = styled.article`
   display: flex;
@@ -26,7 +32,19 @@ const StyledItemElement = styled.article`
   }
 
   &.item--slide-in-left {
-    animation: ${SlideInFromLeft} 0.5s ease;
+    animation: ${SlideInFromLeft} 0.4s ease;
+  }
+
+  &.item--slide-in-right {
+    animation: ${SlideInFromRight} 0.4s ease;
+  }
+
+  &.item--slide-in-bottom {
+    animation: ${SlideInFromBottom} 0.4s ease;
+  }
+
+  &.item--slide-in-top {
+    animation: ${SlideInFromTop} 0.4s ease;
   }
 `;
 
@@ -40,6 +58,10 @@ interface ItemElementProps {
   directionRow?: boolean;
   justifyContentStart?: boolean;
   slideInFromLeft?: boolean;
+  slideInFromBottom?: boolean;
+  slideInFromTop?: boolean;
+  slideInFromRight?: boolean;
+  triggerOnce?: boolean;
 }
 
 export default function ItemElement({
@@ -52,23 +74,45 @@ export default function ItemElement({
   directionRow,
   justifyContentStart,
   slideInFromLeft,
+  slideInFromBottom,
+  slideInFromTop,
+  slideInFromRight,
+  triggerOnce,
 }: ItemElementProps) {
   const [manager] = useClassManager("", [
     [outline, "item--outline"],
     [directionRow, "item--direction-row"],
     [justifyContentStart, "item--justify-start"],
-    [slideInFromLeft, "item--slide-in-left"],
   ]);
+
+  const { ref, showAnimation, animationClass } = useAnimationToggler({
+    threshold: 0.1,
+    triggerOnce,
+    animationClass: slideInFromLeft
+      ? "item--slide-in-left"
+      : slideInFromRight
+      ? "item--slide-in-right"
+      : slideInFromBottom
+      ? "item--slide-in-bottom"
+      : slideInFromTop
+      ? "item--slide-in-top"
+      : "",
+  });
+
+  console.log(animationClass);
 
   return (
     <StyledItemElement
-      className={manager.getResult()}
+      className={
+        manager.getResult() + (showAnimation ? " " + animationClass : "")
+      }
       style={{
         padding: padding ? padding : "",
         gap: gap ? gap : "",
         margin,
         width,
       }}
+      ref={ref}
     >
       {children}
     </StyledItemElement>
