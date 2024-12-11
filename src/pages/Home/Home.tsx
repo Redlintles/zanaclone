@@ -66,7 +66,7 @@ export default function Home() {
           <ItemHalf
             leftElement={
               <>
-                <ItemElement>
+                <ItemElement slideInFromLeft>
                   <ItemTitle borderBottom>
                     {locale.home.gridItems[2].title}
                   </ItemTitle>
