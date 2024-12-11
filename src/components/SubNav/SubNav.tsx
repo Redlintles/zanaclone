@@ -10,7 +10,6 @@ const StyledSubNav = styled.nav`
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 3rem;
 
   .subnav__link {
     color: var(--color-gray);
