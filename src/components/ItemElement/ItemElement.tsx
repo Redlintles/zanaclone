@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import useClassManager from "@hooks/useClassManager";
+import SlideInFromLeft from "../../Animations/SlideInFromLeft";
 
 const StyledItemElement = styled.article`
   display: flex;
@@ -23,6 +24,10 @@ const StyledItemElement = styled.article`
   &.item--justify-start {
     justify-content: flex-start;
   }
+
+  &.item--slide-in-left {
+    animation: ${SlideInFromLeft} 0.5s ease;
+  }
 `;
 
 interface ItemElementProps {
@@ -34,6 +39,7 @@ interface ItemElementProps {
   width?: string;
   directionRow?: boolean;
   justifyContentStart?: boolean;
+  slideInFromLeft?: boolean;
 }
 
 export default function ItemElement({
@@ -45,11 +51,13 @@ export default function ItemElement({
   width,
   directionRow,
   justifyContentStart,
+  slideInFromLeft,
 }: ItemElementProps) {
   const [manager] = useClassManager("", [
     [outline, "item--outline"],
     [directionRow, "item--direction-row"],
     [justifyContentStart, "item--justify-start"],
+    [slideInFromLeft, "item--slide-in-left"],
   ]);
 
   return (
