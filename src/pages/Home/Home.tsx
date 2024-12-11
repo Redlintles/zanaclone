@@ -82,7 +82,7 @@ export default function Home() {
             }
             rightElement={
               <>
-                <ItemElement outline>
+                <ItemElement outline slideInFromRight>
                   <ItemTitle borderBottom>
                     {locale.home.gridItems[3].title}
                   </ItemTitle>
