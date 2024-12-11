@@ -104,12 +104,14 @@ const HistoryTimeline = styled.section`
 export default function History() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container padding="0 18rem">
       <section className="history-main">
         <ItemHalf
           leftElement={
-            <ItemElement>
-              <ItemTitle>{locale.company.history.items[0].title}</ItemTitle>
+            <ItemElement justifyContentStart>
+              <ItemTitle borderBottom margin="0 0 2rem">
+                {locale.company.history.items[0].title}
+              </ItemTitle>
               <ItemText>
                 {locale.company.history.items[0].child as string}
               </ItemText>
@@ -120,6 +122,7 @@ export default function History() {
               <ItemImg src={logoSolo} />
             </ItemElement>
           }
+          padding="0 0 5rem"
         />
 
         <ItemFull>
