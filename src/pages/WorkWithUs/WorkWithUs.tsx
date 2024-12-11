@@ -49,7 +49,7 @@ const StyledWorkMainForm = styled.section`
       }
 
       textarea {
-        resize: none;
+        resize: vertical;
         height: 100px;
       }
     }
@@ -73,17 +73,17 @@ export default function WorkWithUs() {
           <ItemTitle padding="0" margin="0 auto">
             {locale.contactLocale.workWithUs.title}
           </ItemTitle>
-          <Separator />
+          <Separator width="80%" />
           <ItemText textCenter textUnderline fontSize="1.5rem">
             {locale.contactLocale.workWithUs.callToAction}
           </ItemText>
           <ItemText textCenter>
             {locale.contactLocale.workWithUs.paragraphs[0]}
           </ItemText>
-          <ItemText textCenter>
+          <ItemText textCenter lineHeight="1">
             {locale.contactLocale.workWithUs.paragraphs[1]}
           </ItemText>
-          <div style={{ margin: "2rem 0" }}>
+          <div style={{ margin: "1.5rem 0" }}>
             <ItemText textCenter fontWeight="500">
               {locale.contactLocale.workWithUs.paragraphs[2]}
             </ItemText>
