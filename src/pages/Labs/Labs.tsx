@@ -13,12 +13,15 @@ import Container from "@components/Container/Container";
 export default function Labs() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container padding="2rem 18rem">
       <section className="labs-main">
         <ItemHalf
+          padding="3rem 0"
           leftElement={
-            <ItemElement>
-              <ItemTitle>{locale.infrastructure.labsPage.title}</ItemTitle>
+            <ItemElement justifyContentStart>
+              <ItemTitle borderBottom>
+                {locale.infrastructure.labsPage.title}
+              </ItemTitle>
               <ItemText>
                 {locale.infrastructure.labsPage.child as string}
               </ItemText>
