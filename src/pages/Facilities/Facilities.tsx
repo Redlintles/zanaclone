@@ -17,18 +17,19 @@ import Container from "@components/Container/Container";
 export default function Facilities() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container padding="0 18rem">
       <section className="facilities-main">
         <ItemHalf
+          padding="0"
           leftElement={
-            <>
-              <ItemTitle>
+            <ItemElement>
+              <ItemTitle borderBottom>
                 {locale.infrastructure.facilitiesPage.title}
               </ItemTitle>
               <ItemList
                 items={locale.infrastructure.facilitiesPage.child as string[]}
               />
-            </>
+            </ItemElement>
           }
           rightElement={
             <ItemElement>
