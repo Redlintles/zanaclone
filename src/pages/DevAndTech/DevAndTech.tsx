@@ -14,14 +14,16 @@ import Container from "@components/Container/Container";
 export default function DevAndTech() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container padding="0 18rem">
       <section className="dt-main">
         <SubNav links={locale.devAndTech.sublinks} />
 
         <ItemHalf
           leftElement={
-            <ItemElement>
-              <ItemTitle>{locale.devAndTech.gridItems[0].title}</ItemTitle>
+            <ItemElement padding="0 1rem 5rem">
+              <ItemTitle borderBottom>
+                {locale.devAndTech.gridItems[0].title}
+              </ItemTitle>
               <ItemText>
                 {locale.devAndTech.gridItems[0].child as string}
               </ItemText>
@@ -38,14 +40,22 @@ export default function DevAndTech() {
         <ItemHalf
           leftElement={
             <ItemElement>
-              <ItemTitle>{locale.devAndTech.gridItems[1].title}</ItemTitle>
+              <ItemTitle borderBottom>
+                {locale.devAndTech.gridItems[1].title}
+              </ItemTitle>
               <ItemList
+                gap=".25rem"
                 items={locale.devAndTech.gridItems[1].child as string[]}
               />
             </ItemElement>
           }
           rightElement={
-            <ItemElement outline gap={"5rem"}>
+            <ItemElement
+              outline
+              gap={"3rem"}
+              padding=".5rem 1.5rem"
+              margin="0 auto"
+            >
               <ItemImg src={itemOutlineImg} width="15%" height="15%" />
               <ItemText>{locale.devAndTech.paragraph}</ItemText>
             </ItemElement>
