@@ -8,6 +8,7 @@ interface ItemTextProps {
   fontSize?: string;
   fontWeight?: string;
   textUnderline?: boolean;
+  lineHeight?: string;
 }
 
 const StyledItemText = styled.p`
@@ -28,6 +29,7 @@ export default function ItemText({
   fontSize,
   fontWeight,
   textUnderline,
+  lineHeight,
 }: ItemTextProps) {
   const [manager] = useClassManager("", []);
 
@@ -35,7 +37,7 @@ export default function ItemText({
   manager.append([textUnderline, "item__text--underline"]);
   return (
     <StyledItemText
-      style={{ fontSize, fontWeight }}
+      style={{ fontSize, fontWeight, lineHeight }}
       className={manager.getResult()}
     >
       {children}
