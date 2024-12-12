@@ -22,7 +22,7 @@ export default function Facilities() {
         <ItemHalf
           padding="0"
           leftElement={
-            <ItemElement>
+            <ItemElement slideInFromLeft>
               <ItemTitle borderBottom>
                 {locale.infrastructure.facilitiesPage.title}
               </ItemTitle>
@@ -32,7 +32,7 @@ export default function Facilities() {
             </ItemElement>
           }
           rightElement={
-            <ItemElement>
+            <ItemElement slideInFromRight>
               <SlideShow
                 images={[
                   slideImage1,
