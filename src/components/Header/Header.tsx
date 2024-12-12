@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import GlobalLocale, { LocaleContextState } from "@app-types/locale";
@@ -12,28 +12,55 @@ import { Link } from "react-router-dom";
 import PTBRLocale from "@locale/PTBR";
 import ENUSLocale from "@locale/ENUS";
 import ESESLocale from "@locale/ESES";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { SlideInFromLeft } from "../../Animations/SlideIn";
+import { IoMdClose } from "react-icons/io";
+import { SlideOutToLeft } from "../../Animations/SlideOut";
 
 const TopHeader = styled.header`
   display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 22.5rem;
+  padding: 1.5rem 3rem;
   background-color: var(--color-gray);
   align-items: center;
 
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 1.5rem 22.5rem;
+  }
+
   .header__logo {
-    width: 303px;
+    max-width: 303px;
+    flex: 1;
   }
 
   .header__logo > img {
     width: 100%;
   }
+
+  .header__right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 `;
 const SubHeader = styled.nav`
-  display: flex;
-  background-color: var(--color-dark-bg);
-  padding: 1rem 22.5rem;
-  gap: 2rem;
-  justify-content: center;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    background-color: var(--color-dark-bg);
+    padding: 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  @media (min-width: 1200px) {
+    padding: 1rem 22.5rem;
+    gap: 2rem;
+  }
 
   .header-link {
     position: relative;
@@ -110,13 +137,18 @@ const SubHeader = styled.nav`
     }
   }
 `;
-const MainHeader = styled.header``;
+const MainHeader = styled.header`
+  position: relative;
+`;
 const HeaderCountries = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 
   & > span {
     color: white;
@@ -137,8 +169,50 @@ const HeaderCountries = styled.div`
   }
 `;
 
+const StyledBurgerMenu = styled.button`
+  display: block;
+  font-size: 2.5rem;
+  color: var(--color-white);
+  background-color: transparent;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const StyledNavSlide = styled.nav`
+  opacity: 0;
+  transform: translate(0);
+  transition: 0.5s ease opacity, 0.5s ease transform;
+  width: 100vw;
+  background-color: var(--color-dark-bg);
+  position: absolute;
+  left: 0;
+  animation: ${SlideOutToLeft(100)} 0.5s ease forwards;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  z-index: 10;
+  gap: 3rem;
+  align-items: center;
+
+  & > a {
+    font-weight: bold;
+    color: white;
+  }
+
+  &.nav-slide--slide-in {
+    animation: ${SlideInFromLeft(100)} 0.5s ease forwards;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
 export default function Header() {
   const { locale, setLocale } = useContext<LocaleContextState>(localeContext);
+  const [toggleNav, setToggleNav] = useState<boolean>(false);
 
   function changeCountry(newLocale: GlobalLocale) {
     setLocale(newLocale);
@@ -152,6 +226,9 @@ export default function Header() {
             <img src={logoZanaflex} alt="" />
           </div>
           <div className="header__right">
+            <StyledBurgerMenu onClick={() => setToggleNav((prev) => !prev)}>
+              {toggleNav ? <IoMdClose /> : <GiHamburgerMenu />}
+            </StyledBurgerMenu>
             <HeaderCountries>
               <span>{locale.type}</span>
               <div>
@@ -180,6 +257,11 @@ export default function Header() {
             </HeaderCountries>
           </div>
         </TopHeader>
+        <StyledNavSlide className={toggleNav ? "nav-slide--slide-in" : ""}>
+          {locale.headerLinks.map((item) => (
+            <Link to={item.to}>{item.text}</Link>
+          ))}
+        </StyledNavSlide>
         <SubHeader>
           {locale.headerLinks &&
             locale.headerLinks.map((item, index) => (
