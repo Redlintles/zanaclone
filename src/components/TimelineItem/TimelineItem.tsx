@@ -1,12 +1,12 @@
-import React from "react";
 import styled from "styled-components";
-import { SlideInFromLeft, SlideInFromRight } from "../../Animations/SlideIn";
 import useAnimationToggler from "../../hooks/useAnimationToggler";
 
 const StyledTimelineItem = styled.div`
   position: relative;
   width: 17rem;
+
   & > div {
+    transition: 0.5s ease opacity, 0.5s ease transform, 0.5s ease visibility;
     position: relative;
     background-color: var(--color-yellow);
     border-radius: 10px;
@@ -22,6 +22,13 @@ const StyledTimelineItem = styled.div`
 
   &.timeline__item--left {
     left: 12%;
+
+    & > div {
+      opacity: 0;
+      transform: translate(-100%, 0%);
+      visibility: hidden;
+    }
+
     & > div::before {
       --height: 1rem;
       content: "";
@@ -49,6 +56,12 @@ const StyledTimelineItem = styled.div`
   &.timeline__item--right {
     left: 58%;
 
+    & > div {
+      opacity: 0;
+      transform: translate(100%, 0%);
+      visibility: hidden;
+    }
+
     & > div::before {
       --height: 1rem;
       content: "";
@@ -75,10 +88,14 @@ const StyledTimelineItem = styled.div`
   }
 
   &.timeline__item--slide-in-left > div {
-    animation: ${SlideInFromLeft(100)} 0.5s ease;
+    opacity: 1;
+    transform: translate(0%);
+    visibility: visible;
   }
   &.timeline__item--slide-in-right > div {
-    animation: ${SlideInFromRight(100)} 0.5s ease;
+    opacity: 1;
+    transform: translate(0%);
+    visibility: visible;
   }
 `;
 
@@ -89,6 +106,7 @@ interface TimelineItemProps {
 }
 export default function TimelineItem({ type, text, year }: TimelineItemProps) {
   const { ref, animationClass, showAnimation } = useAnimationToggler({
+    threshold: 0.75,
     animationClass:
       type === "left"
         ? "timeline__item--slide-in-left"
