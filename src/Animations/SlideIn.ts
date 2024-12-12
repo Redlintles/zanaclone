@@ -1,18 +1,7 @@
 import { keyframes } from "styled-components";
 
-const translateIntensity = "10";
-const SlideInFromLeft = keyframes`
-  from {
-    opacity: 0;
-    transform: translate(-${translateIntensity}%,0%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0%,0%);
-  }
-`;
-const SlideInFromRight = keyframes`
+const SlideInFromRight = function (translateIntensity: number = 10) {
+  return keyframes`
   from {
     opacity: 0;
     transform: translate(${translateIntensity}%,0%);
@@ -21,9 +10,22 @@ const SlideInFromRight = keyframes`
   to {
     opacity: 1;
     transform: translate(0%,0%);
+  }`;
+};
+const SlideInFromLeft = function (translateIntensity: number = 10) {
+  return keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-${translateIntensity}%,0%);
   }
-`;
-const SlideInFromTop = keyframes`
+
+  to {
+    opacity: 1;
+    transform: translate(0%,0%);
+  }`;
+};
+const SlideInFromTop = function (translateIntensity: number = 10) {
+  return keyframes`
   from {
     opacity: 0;
     transform: translate(0%,-${translateIntensity}%);
@@ -32,9 +34,10 @@ const SlideInFromTop = keyframes`
   to {
     opacity: 1;
     transform: translate(0%,0%);
-  }
-`;
-const SlideInFromBottom = keyframes`
+  }`;
+};
+const SlideInFromBottom = function (translateIntensity: number = 10) {
+  return keyframes`
   from {
     opacity: 0;
     transform: translate(0%,${translateIntensity}%);
@@ -43,7 +46,7 @@ const SlideInFromBottom = keyframes`
   to {
     opacity: 1;
     transform: translate(0%,0%);
-  }
-`;
+  }`;
+};
 
 export { SlideInFromLeft, SlideInFromRight, SlideInFromTop, SlideInFromBottom };
