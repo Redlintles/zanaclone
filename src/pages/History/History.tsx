@@ -37,7 +37,7 @@ const HistoryTimeline = styled.section`
 export default function History() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem 3rem">
+    <Container>
       <section className="history-main">
         <ItemHalf
           leftElement={
