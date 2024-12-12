@@ -8,12 +8,22 @@ import ItemFull from "@components/ItemFull/ItemFull";
 import ItemTitle from "@components/ItemTitle/ItemTitle";
 import ItemText from "@components/ItemText/ItemText";
 import styled from "styled-components";
+import { fadeIn } from "../../Animations/FadeIn";
+import useAnimationToggler from "../../hooks/useAnimationToggler";
 
 const StyledSupplierAreaMain = styled.section`
   & > .supplya-main__video {
     & > video {
       width: 100%;
       height: 400px;
+    }
+  }
+  & > div:last-child {
+    opacity: 0;
+    transition: 0.5s ease opacity;
+
+    &.supplya-main--fade-in {
+      animation: ${fadeIn} 2s ease forwards;
     }
   }
 `;
@@ -35,6 +45,10 @@ const StyledSupplierAreaLinks = styled.div`
 
 export default function SupplierArea() {
   const { locale } = useContext<LocaleContextState>(localeContext);
+  const { ref, animationClass, showAnimation } = useAnimationToggler({
+    animationClass: "supplya-main--fade-in",
+    triggerOnce: true,
+  });
   return (
     <StyledSupplierAreaMain>
       <div className="supplya-main__video">
@@ -49,29 +63,32 @@ export default function SupplierArea() {
           <p>Não foi possível carregar o vídeo</p>
         </video>
       </div>
-      <Container>
-        <ItemFull borderTopNone margin="0 24rem 2rem" padding="4rem 0">
-          <ItemTitle padding="0" margin="0 auto">
-            {locale.qualityAndEnvironment.supplierArea.item.title}
-          </ItemTitle>
-          <ItemText fontSize="1.25rem">
-            {locale.qualityAndEnvironment.supplierArea.item.child as string}
-          </ItemText>
-        </ItemFull>
-        <StyledSupplierAreaLinks>
-          <ItemElement outline width="20%" margin="2rem auto">
-            <ItemLink to="#">
-              {locale.qualityAndEnvironment.supplierArea.btn1Text}
-            </ItemLink>
-            <ItemLink to="#">
-              {locale.qualityAndEnvironment.supplierArea.btn2Text}
-            </ItemLink>
-            <ItemLink to="#">
-              {locale.qualityAndEnvironment.supplierArea.btn3Text}
-            </ItemLink>
-          </ItemElement>
-        </StyledSupplierAreaLinks>
-      </Container>
+
+      <div ref={ref} className={showAnimation ? animationClass : ""}>
+        <Container>
+          <ItemFull borderTopNone margin="0 24rem 2rem" padding="4rem 0">
+            <ItemTitle padding="0" margin="0 auto">
+              {locale.qualityAndEnvironment.supplierArea.item.title}
+            </ItemTitle>
+            <ItemText fontSize="1.25rem">
+              {locale.qualityAndEnvironment.supplierArea.item.child as string}
+            </ItemText>
+          </ItemFull>
+          <StyledSupplierAreaLinks>
+            <ItemElement outline width="20%" margin="2rem auto">
+              <ItemLink to="#">
+                {locale.qualityAndEnvironment.supplierArea.btn1Text}
+              </ItemLink>
+              <ItemLink to="#">
+                {locale.qualityAndEnvironment.supplierArea.btn2Text}
+              </ItemLink>
+              <ItemLink to="#">
+                {locale.qualityAndEnvironment.supplierArea.btn3Text}
+              </ItemLink>
+            </ItemElement>
+          </StyledSupplierAreaLinks>
+        </Container>
+      </div>
     </StyledSupplierAreaMain>
   );
 }
