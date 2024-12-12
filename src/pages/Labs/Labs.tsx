@@ -18,7 +18,7 @@ export default function Labs() {
         <ItemHalf
           padding="3rem 0"
           leftElement={
-            <ItemElement justifyContentStart>
+            <ItemElement justifyContentStart slideInFromLeft>
               <ItemTitle borderBottom>
                 {locale.infrastructure.labsPage.title}
               </ItemTitle>
@@ -28,7 +28,7 @@ export default function Labs() {
             </ItemElement>
           }
           rightElement={
-            <ItemElement padding="0">
+            <ItemElement padding="0" slideInFromRight>
               <ItemImg src={labsImg} />
             </ItemElement>
           }
