@@ -11,70 +11,27 @@ import ItemTitle from "@components/ItemTitle/ItemTitle";
 import ItemText from "@components/ItemText/ItemText";
 import Container from "@components/Container/Container";
 import ItemLink from "@components/ItemLink/ItemLink";
-import { Link } from "react-router-dom";
-
-const CertMainImg = styled.div`
-  position: relative;
-
-  .cert-main__tip {
-    --width: 60%;
-    position: absolute;
-    font-size: 0.9rem;
-    top: -8rem;
-    width: var(--width);
-    left: calc(calc(100% - var(--width)) / 2);
-    opacity: 0;
-    transition: 0.25s ease opacity;
-    padding: 0.5rem;
-    border-radius: 5px;
-    background-color: var(--color-tip-orange);
-  }
-
-  .cert-main__link::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .cert-main__tip::before {
-    position: absolute;
-    bottom: calc(0px - 10px);
-    left: calc(50% - 10px);
-
-    width: 0;
-    height: 0;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid var(--color-tip-orange);
-  }
-
-  .cert-main__tip::after {
-    content: ". Clique na imagem para baixar";
-  }
-
-  .cert-main__img {
-    width: 250px;
-  }
-
-  .cert-main__link:hover + .cert-main__tip {
-    opacity: 1;
-  }
-`;
+import useAnimationToggler from "../../hooks/useAnimationToggler";
+import { SlideInFromTop } from "../../Animations/SlideIn";
+import CertMainImg from "../../components/CertMainImg/CertMainImg";
 
 const StyledCertMain = styled.section`
   .cert-main__list {
     display: flex;
     margin: 7rem 0;
     justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition 1s ease opacity, 1s ease transform;
 
     ul {
       gap: 0;
       padding-bottom: 5rem;
       border-bottom: 5px solid var(--color-dark-bg);
+    }
+
+    &.cert-main__list--slide-in-top {
+      animation: ${SlideInFromTop(50)} 2s ease forwards;
     }
   }
 
@@ -109,6 +66,15 @@ const StyledCertMain = styled.section`
 
 export default function Certifications() {
   const { locale } = useContext<LocaleContextState>(localeContext);
+
+  const {
+    animationClass: listAnimationClass,
+    ref: listRef,
+    showAnimation: showListAnimation,
+  } = useAnimationToggler({
+    triggerOnce: true,
+    animationClass: "cert-main__list--slide-in-top",
+  });
   return (
     <Container padding="0rem 18rem">
       <StyledCertMain>
@@ -121,7 +87,13 @@ export default function Certifications() {
           </ItemText>
         </header>
 
-        <div className="cert-main__list">
+        <div
+          className={
+            "cert-main__list" +
+            (showListAnimation ? " " + listAnimationClass : "")
+          }
+          ref={listRef}
+        >
           <ItemList
             items={
               locale.qualityAndEnvironment.certifications.item.child as string[]
@@ -130,27 +102,20 @@ export default function Certifications() {
         </div>
 
         <div className="cert-main__images">
-          <CertMainImg>
-            <img src={cert1} className="cert-main__img" />
-            <Link to="#" className="cert-main__link"></Link>
-            <span className="cert-main__tip">
-              {locale.qualityAndEnvironment.certifications.hoverTexts[0]}
-            </span>
-          </CertMainImg>
-          <CertMainImg>
-            <img src={cert2} className="cert-main__img" />
-            <Link to="#" className="cert-main__link"></Link>
-            <span className="cert-main__tip">
-              {locale.qualityAndEnvironment.certifications.hoverTexts[1]}
-            </span>
-          </CertMainImg>
-          <CertMainImg>
-            <img src={cert3} className="cert-main__img" />
-            <Link to="#" className="cert-main__link"></Link>
-            <span className="cert-main__tip">
-              {locale.qualityAndEnvironment.certifications.hoverTexts[2]}
-            </span>
-          </CertMainImg>
+          <CertMainImg
+            src={cert1}
+            text={locale.qualityAndEnvironment.certifications.hoverTexts[0]}
+          />
+
+          <CertMainImg
+            src={cert2}
+            text={locale.qualityAndEnvironment.certifications.hoverTexts[1]}
+          />
+
+          <CertMainImg
+            src={cert3}
+            text={locale.qualityAndEnvironment.certifications.hoverTexts[2]}
+          />
         </div>
 
         <div>
