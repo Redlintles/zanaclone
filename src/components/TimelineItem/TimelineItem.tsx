@@ -5,12 +5,14 @@ import useAnimationToggler from "../../hooks/useAnimationToggler";
 
 const StyledTimelineItem = styled.div`
   position: relative;
-  width: 20rem;
+  width: 17rem;
   & > div {
+    position: relative;
     background-color: var(--color-yellow);
     border-radius: 10px;
     border: 1px solid var(--color-yellow-dark);
     padding: 1.5rem;
+    top: -2rem;
 
     & > h6 {
       font-weight: 500;
@@ -19,7 +21,7 @@ const StyledTimelineItem = styled.div`
   }
 
   &.timeline__item--left {
-    left: 7%;
+    left: 12%;
     & > div::before {
       --height: 1rem;
       content: "";
@@ -41,7 +43,7 @@ const StyledTimelineItem = styled.div`
       z-index: 3;
       border-radius: 50%;
       top: -60%;
-      right: -21.3%;
+      right: -26.8%;
     }
   }
   &.timeline__item--right {
@@ -68,7 +70,7 @@ const StyledTimelineItem = styled.div`
       z-index: 3;
       border-radius: 50%;
       top: -60%;
-      left: -25.2%;
+      left: -29.2%;
     }
   }
 
