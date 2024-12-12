@@ -3,14 +3,20 @@ import styled from "styled-components";
 import useClassManager from "@hooks/useClassManager";
 
 const ItemHalfContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   width: 100%;
   gap: 2rem;
   padding: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 
   & > * {
     grid-column: span 1;
+    grid-row: span 1;
+  }
+  @media (min-width: 996px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 
   &.item-half--border-bottom {
