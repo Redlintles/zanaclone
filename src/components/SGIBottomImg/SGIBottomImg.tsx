@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import useAnimationToggler from "../../hooks/useAnimationToggler";
+import { ScaleIn } from "../../Animations/ScaleIn";
 
 interface SgiBottomImgProps {
   src: string;
@@ -8,6 +10,9 @@ interface SgiBottomImgProps {
 
 const StyledSgiBottomImg = styled.div`
   position: relative;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s ease opacity, 0.5s ease transform;
 
   & > .img-wrapper__text {
     position: absolute;
@@ -43,11 +48,22 @@ const StyledSgiBottomImg = styled.div`
     opacity: 1;
     visibility: visible;
   }
+
+  &.img-wrapper__img--scale-in {
+    animation: ${ScaleIn()} 0.5s ease forwards;
+  }
 `;
 
 export default function SgiBottomImg({ src, links }: SgiBottomImgProps) {
+  const { ref, animationClass, showAnimation } = useAnimationToggler({
+    threshold: 0.3,
+    animationClass: "img-wrapper__img--scale-in",
+  });
   return (
-    <StyledSgiBottomImg>
+    <StyledSgiBottomImg
+      ref={ref}
+      className={showAnimation ? animationClass : ""}
+    >
       <img src={src} alt="" className="img-wrapper__img" />
 
       {links && (
