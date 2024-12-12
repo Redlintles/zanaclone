@@ -27,8 +27,11 @@ const TopHeader = styled.header`
     justify-content: space-between;
   }
 
+  @media (min-width: 996px) {
+    padding: 0.5rem 11.25rem;
+  }
   @media (min-width: 1200px) {
-    padding: 1.5rem 22.5rem;
+    padding: 1rem 22.5rem;
   }
 
   .header__logo {
@@ -56,6 +59,11 @@ const SubHeader = styled.nav`
     padding: 1rem;
     gap: 0.5rem;
     justify-content: center;
+  }
+
+  @media (min-width: 996px) {
+    padding: 0.5rem 11.25rem;
+    gap: 1rem;
   }
   @media (min-width: 1200px) {
     padding: 1rem 22.5rem;
