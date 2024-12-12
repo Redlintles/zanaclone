@@ -18,6 +18,8 @@ import sgiImg3 from "@assets/2.3952e1e43bb98c285665.jpg";
 import sgiImg4 from "@assets/3.890a49a0fca20dd7b51e.jpg";
 import sgiImg5 from "@assets/4.b52cc68c4ea254df7af4.jpg";
 import Container from "@components/Container/Container";
+import useAnimationToggler from "../../hooks/useAnimationToggler";
+import { ScaleIn } from "../../Animations/ScaleIn";
 const StyledSGIMain = styled.section`
   & > .sgi-main__header {
     display: flex;
@@ -43,19 +45,6 @@ const StyledSGIBottom = styled.section`
   background-color: var(--color-gray);
   padding: 4rem 4rem 0.25rem;
 
-  .sgi-bottom__top {
-    margin-bottom: 4rem;
-  }
-
-  h4 {
-    color: var(--color-yellow);
-    font-size: 1.65rem;
-    margin-bottom: 1rem;
-  }
-  p {
-    color: var(--color-white);
-  }
-
   .sgi-bottom__container {
     display: flex;
     align-items: flex-end;
@@ -77,19 +66,58 @@ const StyledSGIBottom = styled.section`
       grid-row: span 2;
     }
   }
+`;
 
-  .sgi-bottom__bottom {
+const SGIBottomText = styled.div`
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s ease opacity, 0.5s ease transform;
+
+  & > h4 {
+    color: var(--color-yellow);
+    font-size: 1.65rem;
+    margin-bottom: 1rem;
+  }
+  & > p {
+    color: var(--color-white);
+  }
+
+  &.sgi-bottom__top {
+    margin-bottom: 4rem;
+  }
+
+  &.sgi-bottom__bottom {
     padding-bottom: 3.5rem;
 
     & > p {
       padding-right: 2rem;
     }
   }
+
+  &.sgi__bottom-text--scale-in {
+    animation: ${ScaleIn()} 0.5s ease forwards;
+  }
 `;
 
 export default function SGI() {
   const { locale } = useContext<LocaleContextState>(localeContext);
 
+  const {
+    ref: refTop,
+    animationClass: animationClassTop,
+    showAnimation: showAnimationTop,
+  } = useAnimationToggler({
+    threshold: 0.2,
+    animationClass: "sgi__bottom-text--scale-in",
+  });
+  const {
+    ref: refBottom,
+    animationClass: animationClassBottom,
+    showAnimation: showAnimationBottom,
+  } = useAnimationToggler({
+    threshold: 0.2,
+    animationClass: "sgi__bottom-text--scale-in",
+  });
   return (
     <>
       <Container>
@@ -102,7 +130,7 @@ export default function SGI() {
           <ItemHalf
             padding="2rem 0"
             leftElement={
-              <ItemElement>
+              <ItemElement slideInFromLeft triggerOnce={true}>
                 <ItemTitle borderBottom>
                   {locale.qualityAndEnvironment.sgi.main.title}
                 </ItemTitle>
@@ -127,12 +155,18 @@ export default function SGI() {
         <TermsAndConditions />
       </Container>
       <StyledSGIBottom>
-        <div className="sgi-bottom__top">
+        <SGIBottomText
+          ref={refTop}
+          className={
+            "sgi-bottom__top" +
+            (showAnimationTop ? " " + animationClassTop : "")
+          }
+        >
           <h4>{locale.qualityAndEnvironment.sgi.proficiency.item.title}</h4>
           <p>
             {locale.qualityAndEnvironment.sgi.proficiency.item.child as string}
           </p>
-        </div>
+        </SGIBottomText>
         <div className="sgi-bottom__container">
           <div className="sgi-bottom__gallery">
             <SgiBottomImg src={sgiImg1} />
@@ -157,7 +191,13 @@ export default function SGI() {
             <SgiBottomImg src={sgiImg5} />
           </div>
 
-          <div className="sgi-bottom__bottom">
+          <SGIBottomText
+            ref={refBottom}
+            className={
+              "sgi-bottom__bottom" +
+              (showAnimationBottom ? " " + animationClassBottom : "")
+            }
+          >
             <h4>
               {locale.qualityAndEnvironment.sgi.proficiency.fispqs.item.title}
             </h4>
@@ -167,7 +207,7 @@ export default function SGI() {
                   .child as string
               }
             </p>
-          </div>
+          </SGIBottomText>
         </div>
       </StyledSGIBottom>
     </>
