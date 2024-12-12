@@ -9,7 +9,7 @@ const StyledCulture = styled.section`
   width: 100%;
   height: 120vh;
   &.culture--slide-in-left {
-    animation: ${SlideInFromLeft} 0.5s ease;
+    animation: ${SlideInFromLeft()} 0.5s ease;
   }
 `;
 
