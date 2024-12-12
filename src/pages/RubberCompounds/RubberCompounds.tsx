@@ -47,9 +47,8 @@ export default function RubberCompounds() {
 
   const items1 = (locale.products.item2.child as string[]).slice(0, 6);
   const items2 = (locale.products.item2.child as string[]).slice(6);
-  console.log(items1, items2);
   return (
-    <Container>
+    <Container slideInFromRight>
       <div className="rubber-c-main">
         <ItemHalf
           leftElement={
