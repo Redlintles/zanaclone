@@ -9,7 +9,9 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-aligin: center;
+
+  text-align: center;
+
   color: white;
   font-size: 0.9rem;
 `;
