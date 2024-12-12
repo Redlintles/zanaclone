@@ -6,20 +6,40 @@ import ItemTitle from "@components/ItemTitle/ItemTitle";
 import ItemText from "@components/ItemText/ItemText";
 import Container from "@components/Container/Container";
 import ItemElement from "@components/ItemElement/ItemElement";
+import styled from "styled-components";
+import useAnimationToggler from "../../hooks/useAnimationToggler";
+import { fadeIn } from "../../Animations/FadeIn";
+
+const StyledFISPQSMainText = styled.section`
+  opacity: 0;
+  transition: 1.5s ease opacity;
+
+  &.fisps__main-text--fade-in {
+    animation: ${fadeIn} 1.5s ease forwards;
+  }
+`;
 
 export default function FISPQS() {
   const { locale } = useContext<LocaleContextState>(localeContext);
+
+  const { showAnimation, animationClass, ref } = useAnimationToggler({
+    triggerOnce: true,
+    animationClass: "fisps__main-text--fade-in",
+  });
   return (
     <Container padding="0 18rem">
       <div className="fispqs-main">
-        <section className="fisps-main__text">
+        <StyledFISPQSMainText
+          ref={ref}
+          className={showAnimation ? animationClass : ""}
+        >
           <ItemTitle padding="0" margin="0 auto 2rem">
             {locale.qualityAndEnvironment.fispsqsArea.item.title}
           </ItemTitle>
           <ItemText fontSize="1.3rem" textCenter>
             {locale.qualityAndEnvironment.fispsqsArea.item.child as string}
           </ItemText>
-        </section>
+        </StyledFISPQSMainText>
 
         <ItemElement
           outline
