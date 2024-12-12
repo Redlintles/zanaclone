@@ -32,19 +32,19 @@ const StyledItemElement = styled.article`
   }
 
   &.item--slide-in-left {
-    animation: ${SlideInFromLeft} 0.4s ease;
+    animation: ${SlideInFromLeft()} 0.4s ease;
   }
 
   &.item--slide-in-right {
-    animation: ${SlideInFromRight} 0.4s ease;
+    animation: ${SlideInFromRight()} 0.4s ease;
   }
 
   &.item--slide-in-bottom {
-    animation: ${SlideInFromBottom} 0.4s ease;
+    animation: ${SlideInFromBottom()} 0.4s ease;
   }
 
   &.item--slide-in-top {
-    animation: ${SlideInFromTop} 0.4s ease;
+    animation: ${SlideInFromTop()} 0.4s ease;
   }
 `;
 

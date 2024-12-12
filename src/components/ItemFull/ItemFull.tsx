@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 import useClassManager from "@hooks/useClassManager";
+import { SlideInFromLeft } from "../../Animations/SlideIn";
+import useAnimationToggler from "../../hooks/useAnimationToggler";
 
 const StyledItemFull = styled.article`
   padding: 4rem 1rem;
@@ -11,11 +13,14 @@ const StyledItemFull = styled.article`
   border-top: 5px solid var(--color-gray);
   border-bottom: 5px solid var(--color-gray);
 
-  &.item-full__b-top-none {
+  &.item-full--b-top-none {
     border-top: none;
   }
-  &.item-full__b-bottom-none {
+  &.item-full--b-bottom-none {
     border-bottom: none;
+  }
+  & > div.item-full--slide-in-left {
+    animation: ${SlideInFromLeft()} 0.5s ease;
   }
 `;
 
@@ -36,11 +41,18 @@ export default function ItemFull({
 }: ItemFullProps) {
   const [manager] = useClassManager("", []);
 
-  manager.append([borderTopNone, "item-full__b-top-none"]);
-  manager.append([borderBottomNone, "item-full__b-bottom-none"]);
+  const { ref, animationClass, showAnimation } = useAnimationToggler({
+    threshold: 0.5,
+    animationClass: "item-full--slide-in-left",
+  });
+
+  manager.append([borderTopNone, "item-full--b-top-none"]);
+  manager.append([borderBottomNone, "item-full--b-bottom-none"]);
   return (
     <StyledItemFull style={{ margin, padding }} className={manager.getResult()}>
-      {children}
+      <div ref={ref} className={showAnimation ? animationClass : ""}>
+        {children}
+      </div>
     </StyledItemFull>
   );
 }
