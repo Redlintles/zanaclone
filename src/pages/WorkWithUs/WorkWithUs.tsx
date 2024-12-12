@@ -67,7 +67,7 @@ const StyledWorkMainForm = styled.section`
 export default function WorkWithUs() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem">
+    <Container padding="0 18rem" slideInFromLeft>
       <div className="work-main">
         <StyledWorkMainTop>
           <ItemTitle padding="0" margin="0 auto">

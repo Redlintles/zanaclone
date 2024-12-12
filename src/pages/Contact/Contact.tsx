@@ -82,7 +82,7 @@ export default function Contact() {
     </select>,
   ];
   return (
-    <Container padding="0 18rem">
+    <Container padding="0 18rem" slideInFromLeft>
       <StyledContactMain>
         <ItemTitle>{locale.contactLocale.talkWithUs.formTitle}</ItemTitle>
         <Separator />

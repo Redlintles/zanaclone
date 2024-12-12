@@ -21,12 +21,12 @@ const StyledLocalizationMain = styled.div`
 
 export default function Localization() {
   return (
-    <Container padding="2rem 18rem">
+    <Container padding="2rem 18rem" slideInFromLeft>
       <StyledLocalizationMain>
         <div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.242107446491!2d-46.90473732383065!3d-23.595648562854326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf00ba175e3e6f%3A0xc88580f0a400e21b!2sZanaflex%20Borrachas!5e0!3m2!1spt-BR!2sbr!4v1733624708200!5m2!1spt-BR!2sbr"
-            style={{ border: "0", width: "100%", height: "700px" }}
+            style={{ width: "100%", height: "700px" }}
             loading="lazy"
           >
             <ItemText>Este iframe não pode ser exibido</ItemText>
