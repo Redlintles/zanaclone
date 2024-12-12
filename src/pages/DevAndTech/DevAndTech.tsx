@@ -20,7 +20,11 @@ export default function DevAndTech() {
 
         <ItemHalf
           leftElement={
-            <ItemElement padding="0 1rem 5rem">
+            <ItemElement
+              padding="0 1rem 5rem"
+              slideInFromLeft
+              triggerOnce={true}
+            >
               <ItemTitle borderBottom>
                 {locale.devAndTech.gridItems[0].title}
               </ItemTitle>
@@ -55,6 +59,7 @@ export default function DevAndTech() {
               gap={"3rem"}
               padding=".5rem 1.5rem"
               margin="0 auto"
+              slideInFromRight
             >
               <ItemImg src={itemOutlineImg} width="15%" height="15%" />
               <ItemText>{locale.devAndTech.paragraph}</ItemText>
