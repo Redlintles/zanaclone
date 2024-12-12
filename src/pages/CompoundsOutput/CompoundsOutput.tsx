@@ -19,7 +19,7 @@ import ItemImg from "@components/ItemImg/ItemImg";
 export default function CompoundsOutput() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container slideInFromLeft>
       <section className="compounds-o-main">
         <ItemHalf
           leftElement={

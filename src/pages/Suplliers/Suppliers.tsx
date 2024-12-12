@@ -16,7 +16,7 @@ const StyledSupplyMainMap = styled.section`
 export default function Suppliers() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container slideInFromLeft>
       <div className="supply-main">
         <section className="supply-main__text">
           <ItemTitle borderBottom bold>

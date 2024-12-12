@@ -10,7 +10,7 @@ import ItemText from "@components/ItemText/ItemText";
 export default function Storage() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem" margin="0">
+    <Container padding="0 18rem" margin="0" slideInFromRight>
       <div className="storage-main">
         <ItemHalf
           leftElement={

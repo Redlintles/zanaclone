@@ -38,7 +38,7 @@ export default function CompoundFormat() {
   const images1 = [product1, product2, product3];
   const images2 = [product4, product5, product6, product7];
   return (
-    <Container>
+    <Container slideInFromRight>
       <div className="compounds-f-main">
         <ItemHalf
           leftElement={
