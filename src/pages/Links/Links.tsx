@@ -41,7 +41,7 @@ const StyledLinkList = styled.ul`
 export default function Links() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container>
+    <Container slideInFromRight>
       <section className="links-main">
         <ItemTitle borderBottom>{locale.links.title}</ItemTitle>
 
