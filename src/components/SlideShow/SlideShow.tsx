@@ -20,8 +20,9 @@ const SlideShowContainer = styled.div`
 const SlideShowContent = styled.div`
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 500px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  height: 400px;
 `;
 
 const fadeIn = keyframes`
