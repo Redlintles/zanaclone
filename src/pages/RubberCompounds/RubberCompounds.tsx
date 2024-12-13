@@ -23,7 +23,13 @@ const StyledLeftContainer = styled.div`
     padding-right: 5rem;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     justify-content: space-between;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
   .rubber-c__links {
     display: grid;
