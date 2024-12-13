@@ -10,9 +10,6 @@ interface SgiBottomImgProps {
 
 const StyledSgiBottomImg = styled.div`
   position: relative;
-  opacity: 0;
-  transform: scale(0);
-  transition: 0.5s ease opacity, 0.5s ease transform;
 
   & > .img-wrapper__text {
     position: absolute;
@@ -44,13 +41,27 @@ const StyledSgiBottomImg = styled.div`
     }
   }
 
+  & > img {
+    width: 100%;
+
+    aspect-ratio: 1;
+    @media (min-width: 996px) {
+      aspect-ratio: auto;
+    }
+  }
+
   &:hover > .img-wrapper__text {
     opacity: 1;
     visibility: visible;
   }
 
-  &.img-wrapper__img--scale-in {
-    animation: ${ScaleIn()} 0.5s ease forwards;
+  @media (min-width: 1200px) {
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.5s ease opacity, 0.5s ease transform;
+    &.img-wrapper__img--scale-in {
+      animation: ${ScaleIn()} 0.5s ease forwards;
+    }
   }
 `;
 

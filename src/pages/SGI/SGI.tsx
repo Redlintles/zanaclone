@@ -43,27 +43,43 @@ const StyledSGIMain = styled.section`
 
 const StyledSGIBottom = styled.section`
   background-color: var(--color-gray);
-  padding: 4rem 4rem 0.25rem;
+  padding: 2rem 2rem 0.125rem;
+  text-align: center;
+
+  @media (min-width: 1200px) {
+    text-align: left;
+    padding: 4rem 4rem 0.25rem;
+  }
 
   .sgi-bottom__container {
     display: flex;
-    align-items: flex-end;
-    gap: 4rem;
-    padding-left: 32rem;
+    flex-direction: column;
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 4rem;
+      padding-left: 32rem;
+    }
   }
 
   .sgi-bottom__gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-
-    & > div {
-      grid-column: span 1;
-      grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    @media (min-width: 1200px) {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      & > div:first-child {
+        grid-row: span 2 !important;
+      }
     }
 
-    & > div:first-child {
-      grid-row: span 2;
+    & > div {
+      width: 100%;
+      grid-column: span 1;
+      grid-row: span 1;
     }
   }
 `;
@@ -82,15 +98,17 @@ const SGIBottomText = styled.div`
     color: var(--color-white);
   }
 
-  &.sgi-bottom__top {
-    margin-bottom: 4rem;
-  }
+  @media (min-width: 1200px) {
+    &.sgi-bottom__top {
+      margin-bottom: 4rem;
+    }
 
-  &.sgi-bottom__bottom {
-    padding-bottom: 3.5rem;
+    &.sgi-bottom__bottom {
+      padding-bottom: 3.5rem;
 
-    & > p {
-      padding-right: 2rem;
+      & > p {
+        padding-right: 2rem;
+      }
     }
   }
 
