@@ -11,18 +11,31 @@ import ItemElement from "@components/ItemElement/ItemElement";
 
 const StyledLinkList = styled.ul`
   padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   & > li {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: column;
     position: relative;
+
+    @media (min-width: 768px) {
+      gap: 0.5rem;
+      flex-direction: row;
+      align-items: center;
+    }
 
     &::before {
       --size: 5px;
       content: "";
       position: absolute;
-      top: calc(50% - calc(var(--size) / 2));
+
+      top: calc(var(--size) * 2.5);
+
+      @media (min-width: 768px) {
+        top: calc(50% - calc(var(--size) / 2));
+      }
       left: calc(var(--size) * -3);
       width: var(--size);
       height: var(--size);
