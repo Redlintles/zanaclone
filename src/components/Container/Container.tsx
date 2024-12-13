@@ -17,17 +17,17 @@ const defaultAnimation = css`
 
 const StyledContainer = styled.div`
   background-color: var(--color-white);
-
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
   padding: 3rem 1rem;
+
   @media (min-width: 996px) {
     padding: 3rem 5rem;
   }
   @media (min-width: 1200px) {
     padding: 3rem 18rem;
   }
-
-  display: flex;
-  flex-direction: column;
 
   &.container--slide-in-top {
     ${defaultAnimation}
