@@ -18,7 +18,7 @@ import Container from "@components/Container/Container";
 export default function Analysis() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem">
+    <Container>
       <section className="analysis-main">
         <ItemHalf
           padding="0"
