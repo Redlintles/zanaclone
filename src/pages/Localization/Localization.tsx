@@ -12,7 +12,20 @@ const StyledLocalizationMain = styled.div`
 
   & > div {
     margin: 0 auto;
-    width: 700px;
+
+    width: 100%;
+    padding: 0 2rem;
+
+    @media (min-width: 996px) {
+      width: 500px;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 1200px) {
+      width: 700px;
+      padding: 0;
+    }
+
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -21,7 +34,7 @@ const StyledLocalizationMain = styled.div`
 
 export default function Localization() {
   return (
-    <Container padding="2rem 18rem" slideInFromLeft>
+    <Container slideInFromLeft>
       <StyledLocalizationMain>
         <div>
           <iframe
