@@ -19,6 +19,32 @@ const StyledFISPQSMainText = styled.section`
   }
 `;
 
+const StyledFISPQSMain = styled.section`
+  margin: 0 auto;
+
+  & > article {
+    align-items: center;
+    justify-content: flex-start;
+
+    & > ul {
+      width: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    & > article {
+      flex-direction: row;
+      justify-content: center;
+
+      & > ul {
+        width: auto;
+      }
+    }
+  }
+  @media (min-width: 996px) {
+    width: 60%;
+  }
+`;
+
 export default function FISPQS() {
   const { locale } = useContext<LocaleContextState>(localeContext);
 
@@ -27,7 +53,7 @@ export default function FISPQS() {
     animationClass: "fisps__main-text--fade-in",
   });
   return (
-    <Container padding="0 18rem">
+    <Container>
       <div className="fispqs-main">
         <StyledFISPQSMainText
           ref={ref}
@@ -41,22 +67,18 @@ export default function FISPQS() {
           </ItemText>
         </StyledFISPQSMainText>
 
-        <ItemElement
-          outline
-          directionRow
-          width="60%"
-          margin="4rem auto"
-          padding="4rem 0"
-        >
-          <ItemList
-            gap="2rem"
-            items={locale.qualityAndEnvironment.fispsqsArea.sublinks1}
-          />
-          <ItemList
-            gap="2rem"
-            items={locale.qualityAndEnvironment.fispsqsArea.sublinks2}
-          />
-        </ItemElement>
+        <StyledFISPQSMain>
+          <ItemElement outline margin="4rem auto">
+            <ItemList
+              gap="2rem"
+              items={locale.qualityAndEnvironment.fispsqsArea.sublinks1}
+            />
+            <ItemList
+              gap="2rem"
+              items={locale.qualityAndEnvironment.fispsqsArea.sublinks2}
+            />
+          </ItemElement>
+        </StyledFISPQSMain>
       </div>
     </Container>
   );
