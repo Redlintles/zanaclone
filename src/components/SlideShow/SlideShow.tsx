@@ -9,7 +9,14 @@ interface SlideShowProps {
 const SlideShowContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  @media (min-width: 996px) {
+    padding: 2rem;
+  }
   & > .slide-show__controllers {
     display: flex;
     justify-content: center;
@@ -20,9 +27,17 @@ const SlideShowContainer = styled.div`
 const SlideShowContent = styled.div`
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1;
   margin: 0 auto;
-  height: 400px;
+  aspect-ratio: 1;
+
+  height: 250px;
+
+  @media (min-width: 768px) {
+    height: 300px;
+  }
+  @media (min-width: 996px) {
+    height: 400px;
+  }
 `;
 
 const fadeIn = keyframes`
