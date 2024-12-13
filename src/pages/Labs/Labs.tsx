@@ -13,10 +13,10 @@ import Container from "@components/Container/Container";
 export default function Labs() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="2rem 18rem">
+    <Container>
       <section className="labs-main">
         <ItemHalf
-          padding="3rem 0"
+          padding="1rem 0"
           leftElement={
             <ItemElement justifyContentStart slideInFromLeft>
               <ItemTitle borderBottom>
