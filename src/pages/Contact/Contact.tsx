@@ -9,7 +9,9 @@ import ItemText from "@components/ItemText/ItemText";
 import { Link } from "react-router-dom";
 
 const StyledContactMain = styled.section`
-  width: 50%;
+  @media (min-width: 1200px) {
+    width: 50%;
+  }
   margin: 0 auto;
 
   & > form {
@@ -82,7 +84,7 @@ export default function Contact() {
     </select>,
   ];
   return (
-    <Container padding="0 18rem" slideInFromLeft>
+    <Container slideInFromLeft>
       <StyledContactMain>
         <ItemTitle>{locale.contactLocale.talkWithUs.formTitle}</ItemTitle>
         <Separator />
