@@ -19,6 +19,9 @@ const StyledSupplierAreaMain = styled.section`
     }
   }
   & > div:last-child {
+    & p {
+      text-align: center;
+    }
     opacity: 0;
     transition: 0.5s ease opacity;
 
@@ -30,8 +33,30 @@ const StyledSupplierAreaMain = styled.section`
 const StyledSupplierAreaLinks = styled.div`
   padding-bottom: 2rem;
   position: relative;
+
+  & > article {
+    --width: 70%;
+    width: var(--width);
+    text-align: center;
+
+    @media (max-width: 400px) {
+      --width: 90%;
+    }
+
+    @media (min-width: 768px) {
+      --width: 60%;
+    }
+
+    @media (min-width: 996px) {
+      --width: 50%;
+      text-align: left;
+    }
+    @media (min-width: 1200px) {
+      --width: 20%;
+    }
+  }
+
   &::after {
-    --width: 20%;
     position: absolute;
     content: "";
     width: var(--width);
@@ -66,7 +91,7 @@ export default function SupplierArea() {
 
       <div ref={ref} className={showAnimation ? animationClass : ""}>
         <Container>
-          <ItemFull borderTopNone margin="0 24rem 2rem" padding="4rem 0">
+          <ItemFull borderTopNone margin="0 0 2rem" padding="4rem 0">
             <ItemTitle padding="0" margin="0 auto">
               {locale.qualityAndEnvironment.supplierArea.item.title}
             </ItemTitle>
@@ -75,7 +100,7 @@ export default function SupplierArea() {
             </ItemText>
           </ItemFull>
           <StyledSupplierAreaLinks>
-            <ItemElement outline width="20%" margin="2rem auto">
+            <ItemElement outline margin="2rem auto">
               <ItemLink to="#">
                 {locale.qualityAndEnvironment.supplierArea.btn1Text}
               </ItemLink>
