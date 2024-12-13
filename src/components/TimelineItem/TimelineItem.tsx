@@ -3,15 +3,34 @@ import useAnimationToggler from "../../hooks/useAnimationToggler";
 
 const StyledTimelineItem = styled.div`
   position: relative;
-  width: 17rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 
   & > div {
+    flex: 1;
+    max-width: 7rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    padding: 0.9rem;
+    @media (min-width: 768px) {
+      max-width: 10.88rem;
+      padding: 1.5rem;
+    }
+    @media (min-width: 996px) {
+      max-width: 14.11rem;
+    }
+    @media (min-width: 1200px) {
+      max-width: 17rem;
+    }
+    opacity: 0;
+    visibility: hidden;
+
     transition: 0.5s ease opacity, 0.5s ease transform, 0.5s ease visibility;
     position: relative;
     background-color: var(--color-yellow);
     border-radius: 10px;
     border: 1px solid var(--color-yellow-dark);
-    padding: 1.5rem;
     top: -2rem;
 
     & > h6 {
@@ -21,12 +40,9 @@ const StyledTimelineItem = styled.div`
   }
 
   &.timeline__item--left {
-    left: 12%;
-
     & > div {
-      opacity: 0;
+      margin-left: 10%;
       transform: translate(-100%, 0%);
-      visibility: hidden;
     }
 
     & > div::before {
@@ -43,23 +59,22 @@ const StyledTimelineItem = styled.div`
     &::after {
       content: "";
       position: absolute;
+      left: calc(50% - 0.55rem);
+      top: -5rem;
       width: 1rem;
       height: 1rem;
       background-color: white;
       border: 2px solid var(--color-gray);
       z-index: 3;
       border-radius: 50%;
-      top: -60%;
-      right: -26.8%;
     }
   }
   &.timeline__item--right {
-    left: 58%;
+    justify-content: flex-end;
 
     & > div {
-      opacity: 0;
+      margin-right: 10%;
       transform: translate(100%, 0%);
-      visibility: hidden;
     }
 
     & > div::before {
@@ -78,12 +93,13 @@ const StyledTimelineItem = styled.div`
       position: absolute;
       width: 1rem;
       height: 1rem;
+      top: -5rem;
+      left: calc(50% - 0.55rem);
+
       background-color: white;
       border: 2px solid var(--color-gray);
       z-index: 3;
       border-radius: 50%;
-      top: -60%;
-      left: -29.2%;
     }
   }
 
