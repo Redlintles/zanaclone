@@ -15,7 +15,6 @@ import Container from "@components/Container/Container";
 import TimelineItem from "../../components/TimelineItem/TimelineItem";
 
 const HistoryTimeline = styled.section`
-  margin: 0 12rem;
   border-bottom: 5px solid var(--color-gray);
   padding: 10rem 0 2rem;
   position: relative;
