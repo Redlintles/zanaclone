@@ -10,7 +10,7 @@ import ItemText from "@components/ItemText/ItemText";
 export default function Storage() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem" margin="0" slideInFromRight>
+    <Container slideInFromRight>
       <div className="storage-main">
         <ItemHalf
           leftElement={
@@ -23,7 +23,12 @@ export default function Storage() {
           }
           rightElement={
             <ItemElement>
-              <img src={storageImg} alt="" className="storage-main__img" />
+              <img
+                src={storageImg}
+                alt=""
+                width="70%"
+                className="storage-main__img"
+              />
             </ItemElement>
           }
         />
