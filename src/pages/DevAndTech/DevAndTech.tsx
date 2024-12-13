@@ -14,7 +14,7 @@ import Container from "@components/Container/Container";
 export default function DevAndTech() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem">
+    <Container>
       <section className="dt-main">
         <SubNav links={locale.devAndTech.sublinks} />
 
