@@ -38,7 +38,20 @@ const StyledCertMain = styled.section`
   .cert-main__images {
     display: flex;
     justify-content: center;
-    gap: 10rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    
+    @media(min-width: 996px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 8rem;
+    }
+
+    @media(min-width: 1200px) {   
+      gap: 10rem;
+    }
     padding-bottom: 4rem;
     position: relative;
 
@@ -76,7 +89,7 @@ export default function Certifications() {
     animationClass: "cert-main__list--slide-in-top",
   });
   return (
-    <Container padding="0rem 18rem">
+    <Container>
       <StyledCertMain>
         <header className="cert-main__header">
           <ItemTitle margin="0 auto 1rem" padding="0">
