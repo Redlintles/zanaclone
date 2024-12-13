@@ -8,6 +8,7 @@ interface SubNavProps {
 
 const StyledSubNav = styled.nav`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 
