@@ -17,7 +17,7 @@ import Container from "@components/Container/Container";
 export default function Facilities() {
   const { locale } = useContext<LocaleContextState>(localeContext);
   return (
-    <Container padding="0 18rem">
+    <Container>
       <section className="facilities-main">
         <ItemHalf
           padding="0"
