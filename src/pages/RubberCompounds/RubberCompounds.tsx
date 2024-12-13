@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import ItemHalf from "@components/ItemHalf/ItemHalf";
 import { LocaleContextState } from "@app-types/locale";
 import localeContext from "@context/LocaleContext/LocaleContext";

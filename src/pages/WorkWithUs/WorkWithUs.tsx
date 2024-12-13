@@ -1,5 +1,5 @@
 import { LocaleContextState } from "@app-types/locale";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import ItemText from "@components/ItemText/ItemText";
 import Container from "@components/Container/Container";

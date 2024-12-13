@@ -1,5 +1,5 @@
 import { LocaleContextState } from "@app-types/locale";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import localeContext from "@context/LocaleContext/LocaleContext";
 import supplyMap from "@assets/fornecedores-map.b685947c51d81821e53a.png";
 import Container from "@components/Container/Container";
