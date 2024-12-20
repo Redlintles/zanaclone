@@ -5,6 +5,10 @@ import tsConfigPaths from "vite-tsconfig-paths";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tsConfigPaths()],
+  server: {
+    host: "0.0.0.0",
+    port: 80,
+  },
   resolve: {
     alias: {
       "@assets": path.resolve(__dirname, "src/assets"),
